@@ -1,0 +1,40 @@
+
+@use "@/styles/abstracts/variables" as *;
+
+.card {
+  background: $color-surface;
+
+  border: 1px solid $color-border;
+
+  border-radius: $radius-lg;
+
+  box-shadow: $shadow-sm;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.hover:hover {
+  transform: translateY(-6px);
+
+  box-shadow: $shadow-md;
+
+  border-color: rgba(26, 161, 165, .2);
+}
+
+// PADDING
+
+.sm {
+  padding: $space-4;
+}
+
+.md {
+  padding: $space-6;
+}
+
+.lg {
+  padding: $space-8;
+}
+

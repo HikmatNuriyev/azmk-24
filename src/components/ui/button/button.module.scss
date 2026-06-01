@@ -1,0 +1,99 @@
+
+@use "@/styles/abstracts/variables" as *;
+
+.button {
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease,
+    color .25s ease;
+
+  font-weight: $fw-semibold;
+
+  border-radius: $radius-md;
+
+  &:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+// VARIANTS
+
+.primary {
+  background: $color-primary;
+  color: white;
+
+  &:hover {
+    background: $color-primary-dark;
+  }
+}
+
+.secondary {
+  background: transparent;
+
+  border: 1px solid $color-border;
+
+  color: $color-text-primary;
+
+  &:hover {
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}
+
+.ghost {
+  background: transparent;
+
+  color: $color-primary;
+
+  &:hover {
+    background: rgba(26, 161, 165, .08);
+  }
+}
+
+// SIZES
+
+.sm {
+  height: 40px;
+  padding-inline: 18px;
+
+  font-size: $text-sm;
+}
+
+.md {
+  height: 48px;
+  padding-inline: 24px;
+
+  font-size: $text-md;
+}
+
+.lg {
+  height: 56px;
+  padding-inline: 32px;
+
+  font-size: $text-md;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .button {
+    width: 100%;
+  }
+}

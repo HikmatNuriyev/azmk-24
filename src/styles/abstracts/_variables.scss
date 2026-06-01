@@ -1,0 +1,68 @@
+
+// COLORS
+$color-primary: #1aa1a5;
+$color-primary-dark: #148488;
+
+$color-text-primary: #0a2342;
+$color-text-secondary: #5b6470;
+
+$color-background: #f8fafc;
+$color-surface: #ffffff;
+
+$color-border: #e5e7eb;
+
+// TYPOGRAPHY
+$text-xs: clamp(12px, 1vw, 13px);
+$text-sm: clamp(14px, 1vw, 15px);
+$text-md: clamp(16px, 1vw, 18px);
+$text-lg: clamp(20px, 2vw, 24px);
+$text-xl: clamp(32px, 4vw, 48px);
+$text-hero: clamp(48px, 6vw, 72px);
+
+// FONT WEIGHTS
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// SPACING
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 24px;
+$space-6: 32px;
+$space-7: 48px;
+$space-8: 64px;
+$space-9: 96px;
+
+// RADIUS
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-xl: 32px;
+
+// SHADOWS
+$shadow-sm:
+  0 1px 2px rgba(0,0,0,.04);
+
+$shadow-md:
+  0 8px 24px rgba(0,0,0,.08);
+
+$shadow-lg:
+  0 20px 60px rgba(0,0,0,.12);
+
+// BREAKPOINTS
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-laptop: 1024px;
+$bp-desktop: 1200px;
+$bp-wide: 1440px;
+
+
+
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 18px;
+$radius-xl: 24px;
+$radius-2xl: 32px;

@@ -1,0 +1,80 @@
+export const productsData = [
+  {
+    title: "İstehlak Krediti",
+    amount: "100 - 40 000 AZN",
+    duration: "1 - 84 ay",
+    rate: "22% - 36%",
+    commission: "2% - 10%",
+    collateral: "Tələb olunmur",
+    initialPayment: "Tələb olunmur",
+    fifd: "min. 22,8%",
+    href: "/muraciet",
+  },
+  {
+    title: "Lombard Krediti",
+    amount: "100 - 100 000 AZN",
+    duration: "1 - 48 ay",
+    rate: "34% - 48%",
+    commission: "2% - 5%",
+    collateral: "Qızıl-zinət əşyaları",
+    initialPayment: "Tələb olunmur",
+    fifd: "min. 35,30%",
+    href: "/muraciet",
+  },
+  {
+    title: "AvtoLizinq",
+    amount: "100 000 AZN-ə dək",
+    duration: "6 - 48 ay",
+    rate: "25% - 28%",
+    commission: "5%",
+    collateral: "Avtomobil",
+    initialPayment: "20%",
+    fifd: "min. 28,10%",
+    href: "/muraciet",
+  },
+];
+
+export const comparisonRows = [
+  {
+    label: "Məbləğ",
+    consumer: "100 - 40 000",
+    lombard: "100 - 100 000",
+    leasing: "100 000-ə dək",
+  },
+  {
+    label: "Müddət",
+    consumer: "1 - 84 ay",
+    lombard: "1 - 48 ay",
+    leasing: "6 - 48 ay",
+  },
+  {
+    label: "Faiz",
+    consumer: "22% - 36%",
+    lombard: "34% - 48%",
+    leasing: "25% - 28%",
+  },
+  {
+    label: "Komissiya",
+    consumer: "2% - 10%",
+    lombard: "2% - 5%",
+    leasing: "5%",
+  },
+  {
+    label: "Təminat",
+    consumer: "n/a",
+    lombard: "Qızıl-zinət əşyaları",
+    leasing: "Avtomobil",
+  },
+  {
+    label: "İlkin ödəniş",
+    consumer: "n/a",
+    lombard: "n/a",
+    leasing: "20%",
+  },
+  {
+    label: "FİFD",
+    consumer: "min. 22,8%",
+    lombard: "min. 35,30%",
+    leasing: "min. 28,10%",
+  },
+];

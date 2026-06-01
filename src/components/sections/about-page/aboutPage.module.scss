@@ -1,0 +1,206 @@
+@use "@/styles/abstracts/variables" as *;
+
+.about {
+  padding-bottom: $space-9;
+}
+
+.hero {
+  padding-block: $space-8;
+
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+
+  margin-bottom: $space-4;
+
+  padding: $space-2 $space-4;
+
+  border-radius: $radius-xl;
+
+  background: rgba(26,161,165,.08);
+
+  color: $color-primary;
+
+  font-size: $text-sm;
+  font-weight: $fw-semibold;
+}
+
+.heroText {
+  margin-inline: auto;
+  margin-top: $space-5;
+
+  max-width: 760px;
+
+  color: $color-text-secondary;
+
+  font-size: $text-md;
+  line-height: 1.8;
+}
+
+.story {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: $space-8;
+
+  align-items: center;
+}
+
+.visual {
+  overflow: hidden;
+
+  border-radius: $radius-xl;
+
+  img {
+    width: 100%;
+    height: 520px;
+
+    object-fit: cover;
+  }
+}
+
+.content {
+
+  p {
+    margin-top: $space-4;
+
+    color: $color-text-secondary;
+
+    line-height: 1.8;
+  }
+}
+
+.values {
+  margin-top: $space-8;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: $space-5;
+}
+
+.valueCard {
+
+  strong {
+    display: block;
+
+    color: $color-text-primary;
+
+    font-size: $text-lg;
+    font-weight: $fw-bold;
+  }
+
+  p {
+    margin-top: $space-3;
+
+    color: $color-text-secondary;
+
+    line-height: 1.7;
+  }
+}
+
+.contactStrip {
+  margin-top: $space-8;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: $space-4;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+
+  padding: $space-5;
+
+  border-radius: $radius-lg;
+
+  background: $color-surface;
+
+  border: 1px solid $color-border;
+
+  svg {
+    width: 22px;
+    height: 22px;
+
+    color: $color-primary;
+
+    flex-shrink: 0;
+  }
+
+  span {
+    color: $color-text-primary;
+
+    font-weight: $fw-medium;
+  }
+}
+
+@media (max-width: $bp-laptop) {
+
+  .story {
+    grid-template-columns: 1fr;
+  }
+
+  .values {
+    grid-template-columns: 1fr;
+  }
+
+  .contactStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .visual {
+
+    img {
+      height: 380px;
+    }
+  }
+}
+
+@media (max-width: $bp-tablet) {
+
+  .contactStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-block: $space-6;
+  }
+
+  .visual {
+
+    img {
+      height: 280px;
+    }
+  }
+}
+@media (max-width: $bp-tablet) {
+  .about {
+    padding-bottom: $space-7;
+  }
+
+  .heroText {
+    font-size: $text-sm;
+  }
+
+  .story {
+    gap: $space-5;
+  }
+
+  .content {
+    p {
+      font-size: $text-sm;
+    }
+  }
+
+  .contactItem {
+    padding: $space-4;
+  }
+}

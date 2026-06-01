@@ -1,0 +1,188 @@
+@use "@/styles/abstracts/variables" as *;
+
+.application {
+  padding-block: $space-8;
+}
+
+.hero {
+  text-align: center;
+  max-width: 860px;
+  margin-inline: auto;
+
+  p {
+    margin-top: $space-4;
+
+    color: $color-text-secondary;
+
+    font-size: $text-md;
+    line-height: 1.7;
+  }
+}
+
+.badge {
+  display: inline-flex;
+
+  margin-bottom: $space-4;
+
+  padding: $space-2 $space-4;
+
+  border-radius: $radius-xl;
+
+  background: rgba(26,161,165,.08);
+
+  color: $color-primary;
+
+  font-size: $text-sm;
+  font-weight: $fw-semibold;
+}
+
+.wrapper {
+  margin-top: $space-8;
+
+  display: grid;
+
+  grid-template-columns: .9fr 1.1fr;
+
+  gap: $space-7;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.infoCard {
+  padding: $space-6;
+
+  border-radius: $radius-xl;
+
+  border: 1px solid $color-border;
+
+  background: $color-surface;
+
+  strong {
+    display: block;
+
+    color: $color-text-primary;
+
+    font-size: $text-lg;
+  }
+
+  span {
+    display: block;
+
+    margin-top: $space-2;
+
+    color: $color-text-secondary;
+
+    line-height: 1.7;
+  }
+}
+
+.form {
+  padding: $space-7;
+
+  border-radius: $radius-xl;
+
+  border: 1px solid $color-border;
+
+  background: $color-surface;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: $space-5;
+
+  label {
+    margin-bottom: $space-2;
+
+    color: $color-text-primary;
+
+    font-weight: $fw-semibold;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: $radius-md;
+
+    border: 1px solid $color-border;
+
+    background: white;
+
+    outline: none;
+
+    font-size: $text-sm;
+
+    transition:
+      border-color .25s ease,
+      box-shadow .25s ease;
+
+    &:focus {
+      border-color: $color-primary;
+
+      box-shadow:
+        0 0 0 4px rgba(26,161,165,.08);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+@media (max-width: $bp-laptop) {
+
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: $bp-tablet) {
+  .application {
+    padding-block: $space-6;
+  }
+
+  .hero {
+    p {
+      font-size: $text-sm;
+    }
+  }
+
+  .wrapper {
+    margin-top: $space-6;
+    gap: $space-5;
+  }
+
+  .infoCard {
+    padding: $space-5;
+
+    strong {
+      font-size: $text-md;
+    }
+
+    span {
+      font-size: $text-sm;
+    }
+  }
+
+  .form {
+    padding: $space-5;
+  }
+
+  .field {
+    margin-bottom: $space-4;
+
+    input,
+    select,
+    textarea {
+      padding: 13px 14px;
+    }
+  }
+}

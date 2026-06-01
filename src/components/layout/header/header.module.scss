@@ -1,0 +1,372 @@
+
+@use "@/styles/abstracts/variables" as *;
+// ==================================== Header===============================
+.header {
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  background: rgba(255,255,255,.96);
+
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid $color-border;
+}
+
+.wrapper {
+  width: 100%;
+}
+.active {
+  color: $color-primary;
+
+  &::after {
+    width: 100%;
+  }
+}
+// ==================================== Header===============================
+
+
+// ==================================== Navbar===============================
+
+.navbar {
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: $space-6;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 240px;
+    height: auto;
+  }
+}
+// ==================================== Navbar===============================
+
+
+
+// ==================================== DESKTOP NAVIGATION====================
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+
+  gap: $space-7;
+}
+
+.navLink {
+  position: relative;
+
+  color: $color-text-primary;
+
+  text-decoration: none;
+
+  font-size: $text-md;
+  font-weight: $fw-medium;
+
+  transition: color .25s ease;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0%;
+    height: 2px;
+
+    background: $color-primary;
+
+    transition: width .25s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+// ==================================== DESKTOP NAVIGATION====================
+
+
+// ==================================== ACTIONS====================
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  gap: $space-4;
+}
+
+.menuBtn {
+  display: none;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  svg {
+    width: 30px;
+    height: 30px;
+
+    color: $color-text-primary;
+  }
+}
+// ==================================== TOPBAR ====================
+.topbar {
+  height: 52px;
+
+  border-top: 1px solid $color-border;
+}
+
+.topbarContent {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbarLeft,
+.topbarRight {
+  display: flex;
+  align-items: center;
+
+  gap: $space-6;
+
+  a {
+    color: $color-text-secondary;
+
+    text-decoration: none;
+
+    font-size: $text-sm;
+
+    transition: color .25s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+// ==================================== MOBILE MENU ====================
+
+.mobileMenu {
+  position: fixed;
+
+  top: 90px;
+  left: 0;
+
+  width: 100%;
+  height: calc(100vh - 90px);
+
+  background: white;
+
+  padding: $space-7;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: $space-6;
+
+  transform: translateX(-100%);
+
+  transition: transform .3s ease;
+
+  z-index: 999;
+}
+
+.mobileOpen {
+  transform: translateX(0);
+}
+
+.mobileLink {
+  text-decoration: none;
+
+  color: $color-text-primary;
+
+  font-size: $text-lg;
+  font-weight: $fw-medium;
+}
+
+
+.mobileTitle {
+  display: block;
+
+  margin-bottom: $space-3;
+
+  color: $color-text-primary;
+
+  font-size: $text-md;
+
+  font-weight: $fw-bold;
+}
+
+.mobileSubmenu {
+  display: flex;
+  flex-direction: column;
+
+  gap: $space-3;
+
+  padding-left: $space-4;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, .4);
+  backdrop-filter: blur(4px);
+
+  z-index: 998;
+}
+@media (max-width: $bp-tablet) {
+  .navbar {
+    height: 76px;
+  }
+
+  .logo {
+    img {
+      width: 150px;
+    }
+  }
+
+  .actions {
+    gap: $space-2;
+  }
+
+  .actions > button:first-child {
+    display: none;
+  }
+
+  .mobileMenu {
+    top: 76px;
+    height: calc(100vh - 76px);
+    padding: $space-5;
+  }
+}
+// ==================================== MOBILE MENU ====================
+
+
+
+
+
+// ==================================== RESPONSIVE====================
+
+@media (max-width: $bp-laptop) {
+
+  .desktopNav {
+    display: none;
+  }
+
+  .menuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .topbar {
+    display: none;
+  }
+
+  .logo {
+
+    img {
+      width: 180px;
+    }
+  }
+}
+
+
+// ==================================== RESPONSIVE====================
+
+
+
+// ==================================== DROPDOWN====================
+// ==================================== DROPDOWN====================
+.dropdown {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  &:hover {
+
+    .dropdownMenu {
+      opacity: 1;
+      visibility: visible;
+
+      transform: translateY(0);
+    }
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+
+  top: 130%;
+  left: 0;
+
+  min-width: 240px;
+
+  background: white;
+
+  border: 1px solid $color-border;
+
+  border-radius: $radius-lg;
+
+  box-shadow: $shadow-md;
+
+  padding: $space-3;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: $space-2;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    visibility .25s ease;
+
+  z-index: 999;
+}
+
+.dropdownItem {
+  padding:
+    $space-3
+    $space-4;
+
+  border-radius: $radius-md;
+
+  text-decoration: none;
+
+  color: $color-text-primary;
+
+  transition:
+    background .25s ease,
+    color .25s ease;
+
+  &:hover {
+    background: rgba(26,161,165,.08);
+
+    color: $color-primary;
+  }
+}
+// ==================================== DROPDOWN====================
+// ==================================== DROPDOWN====================

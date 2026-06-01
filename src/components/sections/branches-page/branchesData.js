@@ -1,0 +1,27 @@
+export const branchesData = [
+  {
+    title: "MXD filialı",
+    address: "Bakı şəh., Nizami küç. 68",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Bakı şəhəri Nizami küçəsi 68",
+  },
+  {
+    title: "Cəlilabad Filialı",
+    address: "Azərbaycan küç. 76",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Cəlilabad Azərbaycan küçəsi 76",
+  },
+  {
+    title: "Salyan Filialı",
+    address: "R. Ulutürk pr. 30/21",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Salyan R Ulutürk prospekti 30/21",
+  },
+  {
+    title: "Lənkəran Filialı",
+    address: "H. Aslanov 48/1",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Lənkəran H Aslanov 48/1",
+  },
+  {
+    title: "Şirvan Filialı",
+    address: "M. Ə. Rəsulzadə küç. 17A m41",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Şirvan M Ə Rəsulzadə küçəsi 17A m41",
+  },
+];

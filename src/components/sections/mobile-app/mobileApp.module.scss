@@ -1,0 +1,96 @@
+@use "@/styles/abstracts/variables" as *;
+
+.mobileApp {
+  padding-block: $space-7;
+}
+
+.wrapper {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: $space-8;
+
+  padding: $space-6;
+
+  border-radius: $radius-2xl;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(26,161,165,.08),
+      rgba(255,255,255,1)
+    );
+min-height: 380px;
+  overflow: hidden;
+}
+
+.content {
+  max-width: 560px;
+}
+
+.badge {
+  display: inline-flex;
+
+  margin-bottom: $space-4;
+
+  padding: $space-2 $space-4;
+
+  border-radius: $radius-xl;
+
+  background: rgba(26,161,165,.1);
+
+  color: $color-primary;
+
+  font-size: $text-sm;
+  font-weight: $fw-semibold;
+}
+
+.description {
+  margin-top: $space-4;
+
+  color: $color-text-secondary;
+
+  line-height: 1.7;
+
+  max-width: 480px;
+   font-size: $text-sm;
+}
+
+.actions {
+  margin-top: $space-6;
+
+  display: flex;
+  gap: $space-4;
+}
+
+.visual {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+}
+
+@media (max-width: $bp-laptop) {
+
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+
+  .actions {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,100 @@
+@use "@/styles/abstracts/variables" as *;
+
+.services {
+//   padding-block: $space-9;
+}
+
+.heading {
+  margin-bottom: $space-7;
+}
+
+.badge {
+  display: inline-flex;
+
+  margin-bottom: $space-3;
+
+  padding: $space-2 $space-4;
+
+  border-radius: $radius-xl;
+
+  background: rgba(26,161,165,.08);
+
+  color: $color-primary;
+
+  font-size: $text-sm;
+  font-weight: $fw-semibold;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: $space-5;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  text-decoration: none;
+
+  h3 {
+    margin-top: $space-5;
+
+    color: $color-text-primary;
+
+    font-size: $text-lg;
+    font-weight: $fw-bold;
+  }
+
+  p {
+    margin-top: $space-3;
+
+    color: $color-text-secondary;
+
+    line-height: 1.7;
+  }
+}
+
+.icon {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: $radius-lg;
+
+  background: rgba(26,161,165,.08);
+
+  img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.more {
+  margin-top: auto;
+
+  padding-top: $space-5;
+
+  color: $color-primary;
+
+  font-weight: $fw-semibold;
+}
+
+@media (max-width: $bp-laptop) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

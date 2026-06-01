@@ -1,0 +1,174 @@
+@use "@/styles/abstracts/variables" as *;
+
+.footer {
+  margin-top: $space-7;
+
+  background: #081a33;
+
+  color: white;
+}
+
+.top {
+  padding-block: $space-6;
+
+  display: grid;
+
+  grid-template-columns: .9fr 1.1fr;
+
+  gap: $space-8;
+}
+
+.brand {
+
+  img {
+    width: 240px;
+    height: auto;
+  }
+
+  p {
+    margin-top: $space-5;
+
+    max-width: 340px;
+
+    color: rgba(255,255,255,.7);
+
+    line-height: 1.7;
+  }
+}
+
+.socials {
+  margin-top: $space-5;
+
+  display: flex;
+  align-items: center;
+
+  gap: $space-3;
+
+  a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.08);
+
+    transition:
+      background .25s ease,
+      transform .25s ease;
+
+    &:hover {
+      background: $color-primary;
+
+      transform: translateY(-2px);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.links {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: $space-5;
+
+  h3 {
+    margin-bottom: $space-4;
+
+    font-size: $text-md;
+    font-weight: $fw-bold;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+
+    gap: $space-2;
+
+    margin-bottom: $space-3;
+
+    color: rgba(255,255,255,.7);
+
+    text-decoration: none;
+
+    transition: color .25s ease;
+
+    &:hover {
+      color: white;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+.bottom {
+  padding-block: $space-5;
+
+  border-top: 1px solid rgba(255,255,255,.08);
+
+  text-align: center;
+
+  p {
+    color: rgba(255,255,255,.6);
+
+    font-size: $text-sm;
+  }
+}
+
+@media (max-width: $bp-laptop) {
+
+  .top {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: $bp-tablet) {
+
+  .links {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: $bp-tablet) {
+  .footer {
+    margin-top: $space-6;
+  }
+
+  .top {
+    padding-block: $space-6;
+    gap: $space-6;
+  }
+
+  .brand {
+    img {
+      width: 180px;
+    }
+
+    p {
+      font-size: $text-sm;
+    }
+  }
+
+  .links {
+    grid-template-columns: 1fr;
+    gap: $space-5;
+  }
+
+  .bottom {
+    text-align: left;
+
+    p {
+      line-height: 1.6;
+    }
+  }
+}
