@@ -1,5 +1,39 @@
 @use "./abstracts/variables" as *;
+:root {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
 
+  --color-text-primary: #0a2342;
+  --color-text-secondary: #5b6470;
+
+  --color-border: #e5e7eb;
+  --color-dark-surface: #081a33;
+
+  /* Brand */
+  --color-primary: #1aa1a5;
+  --color-primary-dark: #148488;
+
+  /* New */
+  --color-accent: #43b8af;
+  --color-highlight: #8471D0;
+}
+
+html[data-theme="dark"] {
+  --color-bg: #071527;
+  --color-surface: #0b1f3a;
+
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b8c2d1;
+
+  --color-border: rgba(255,255,255,.12);
+  --color-dark-surface: #020d18;
+
+  /* Brand dəyişmir */
+  --color-primary: #1aa1a5;
+  --color-primary-dark: #148488;
+
+  --color-accent: #43b8af;
+}
 *,
 *::before,
 *::after {
@@ -69,3 +103,4 @@ body {
 main {
   width: 100%;
 }
+

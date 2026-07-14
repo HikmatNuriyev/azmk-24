@@ -3,9 +3,9 @@
 .footer {
   margin-top: $space-7;
 
-  background: #081a33;
+  background: $color-dark-surface;
 
-  color: white;
+color: $color-text-primary;
 }
 
 .top {
@@ -102,7 +102,7 @@
     transition: color .25s ease;
 
     &:hover {
-      color: white;
+     color: $color-text-primary;
     }
 
     svg {

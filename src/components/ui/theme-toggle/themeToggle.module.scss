@@ -1,0 +1,53 @@
+@use "@/styles/abstracts/variables" as *;
+
+.toggle {
+  width: 42px;
+  height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 1px solid $color-border;
+
+  background: $color-surface;
+  color: $color-text-primary;
+
+  cursor: pointer;
+
+  transition:
+    background .25s ease,
+    color .25s ease,
+    border-color .25s ease;
+
+  &:hover {
+    color: $color-primary;
+    border-color: $color-primary;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.topbar {
+  width: 24px;
+  height: 24px;
+
+  border: none;
+  background: transparent;
+  color: $color-text-secondary;
+
+  &:hover {
+    color: $color-primary;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}

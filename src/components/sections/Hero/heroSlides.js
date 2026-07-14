@@ -15,7 +15,7 @@ export const heroSlides = [
 
     href: "/contact",
 
-    // image: hero1,
+    image: "/images/istehlak.svg",
   },
 
   {
@@ -33,7 +33,8 @@ export const heroSlides = [
 
     href: "/kredit",
 
-    // image:   hero2,
+    image: "/images/gold.svg",
+    
   },
 
   {
@@ -51,7 +52,8 @@ export const heroSlides = [
 
     href: "/lizinq",
 
-    // image: hero3,
+    image: "/images/lizinq.svg",
+  
   },
 ];
 

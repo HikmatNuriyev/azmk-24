@@ -1,5 +1,7 @@
-"use client";
 
+
+"use client";
+import ThemeToggle from "@/components/ui/theme-toggle";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -17,6 +19,7 @@ import NavDropdown from "./NavDropdown";
 
 import Container from "@/components/ui/container";
 import Button from "@/components/ui/button";
+import QRCodeBox from "@/components/ui/qr-code";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,11 +74,37 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
+            <div className={style.applicationDropdown}>
+              <span className={style.navLink}>
+                Onlayn Müraciət
+              </span>
+
+              <div className={style.applicationMenu}>
+                <div className={style.applicationContent}>
+                  <div className={style.applicationLeft}>
+                    <h3>Onlayn Müraciət</h3>
+
+                    <p>
+                      Kredit və lizinq müraciətlərinizi bir neçə dəqiqəyə
+                      göndərin. QR kodu skan edərək müraciət səhifəsinə keçə
+                      bilərsiniz.
+                    </p>
+
+                    <Link href="/muraciet">
+                      <Button>Müraciət Et</Button>
+                    </Link>
+                  </div>
+
+                  <div className={style.applicationRight}>
+                    <QRCodeBox value="https://apps.apple.com/az/app/kredit-evi/id1611922467" />
+                  </div>
+                </div>
+              </div>
+            </div>
           </nav>
 
           <div className={style.actions}>
-            <Button>Onlayn Müraciət</Button>
-
             <button
               className={style.menuBtn}
               onClick={() => setIsOpen(!isOpen)}

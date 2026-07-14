@@ -42,23 +42,17 @@ export default function Hero() {
             <Container>
               <div className={style.wrapper}>
                 <div className={style.content}>
-                  <span className={style.badge}>
-                    {slide.badge}
-                  </span>
+                  <span className={style.badge}>{slide.badge}</span>
 
                   <Title as="h1" size="hero">
                     {slide.title}
                   </Title>
 
-                  <p className={style.description}>
-                    {slide.description}
-                  </p>
+                  <p className={style.description}>{slide.description}</p>
 
                   <div className={style.actions}>
                     <Link href={slide.href}>
-                      <Button size="lg">
-                        {slide.primaryButton}
-                      </Button>
+                      <Button size="lg">{slide.primaryButton}</Button>
                     </Link>
 
                     <Link href={slide.href}>
@@ -71,6 +65,8 @@ export default function Hero() {
 
                 <div className={style.visual}>
                   <Image
+                    width={500}
+                    height={500}
                     src={slide.image}
                     alt={slide.title}
                     priority

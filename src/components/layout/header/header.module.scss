@@ -1,14 +1,14 @@
 
 @use "@/styles/abstracts/variables" as *;
-// ==================================== Header===============================
+
+/* ================= HEADER ================= */
+
 .header {
   position: sticky;
   top: 0;
-
   z-index: 1000;
 
-  background: rgba(255,255,255,.96);
-
+  background: var(--color-surface);
   backdrop-filter: blur(10px);
 
   border-bottom: 1px solid $color-border;
@@ -17,20 +17,94 @@
 .wrapper {
   width: 100%;
 }
-.active {
-  color: $color-primary;
 
-  &::after {
-    width: 100%;
+/* ================= TOPBAR ================= */
+
+.topbar {
+  height: 38px;
+
+  border-bottom: 1px solid $color-border;
+
+  background: $color-surface;
+}
+
+.topbarContent {
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.topbarRight {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: $space-3;
+
+  a {
+    height: 100%;
+
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+
+    color: $color-text-secondary;
+
+    font-size: $text-sm;
+    text-decoration: none;
+
+    transition: color .25s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
   }
 }
-// ==================================== Header===============================
 
+.separator {
+  width: 1px;
+  height: 16px;
 
-// ==================================== Navbar===============================
+  background: $color-border;
+}
 
+.langBtn,
+.utilityBtn {
+  width: 24px;
+  height: 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  color: $color-text-secondary;
+
+  cursor: pointer;
+
+  font-size: $text-sm;
+  font-weight: $fw-semibold;
+
+  transition: color .25s ease;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+/* ================= NAVBAR ================= */
 .navbar {
-  height: 90px;
+  height: 82px;
 
   display: flex;
   align-items: center;
@@ -42,23 +116,18 @@
 .logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 
   img {
-    width: 240px;
+    width: 220px;
     height: auto;
   }
 }
-// ==================================== Navbar===============================
-
-
-
-// ==================================== DESKTOP NAVIGATION====================
 
 .desktopNav {
   display: flex;
   align-items: center;
-
-  gap: $space-7;
+  gap: $space-6;
 }
 
 .navLink {
@@ -68,8 +137,8 @@
 
   text-decoration: none;
 
-  font-size: $text-md;
-  font-weight: $fw-medium;
+  font-size: $text-sm;
+  font-weight: $fw-semibold;
 
   transition: color .25s ease;
 
@@ -81,11 +150,10 @@
     content: "";
 
     position: absolute;
-
     left: 0;
     bottom: -8px;
 
-    width: 0%;
+    width: 0;
     height: 2px;
 
     background: $color-primary;
@@ -97,203 +165,48 @@
     width: 100%;
   }
 }
-// ==================================== DESKTOP NAVIGATION====================
 
+.active {
+  color: $color-primary;
 
-// ==================================== ACTIONS====================
+  &::after {
+    width: 100%;
+  }
+}
+
+/* ================= ACTIONS ================= */
 
 .actions {
   display: flex;
   align-items: center;
-
-  gap: $space-4;
+  gap: $space-3;
 }
 
 .menuBtn {
   display: none;
 
+  width: 42px;
+  height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
   border: none;
+  border-radius: $radius-md;
+
   background: transparent;
 
   cursor: pointer;
 
   svg {
-    width: 30px;
-    height: 30px;
-
+    width: 28px;
+    height: 28px;
     color: $color-text-primary;
   }
 }
-// ==================================== TOPBAR ====================
-.topbar {
-  height: 52px;
 
-  border-top: 1px solid $color-border;
-}
+/* ================= DROPDOWN ================= */
 
-.topbarContent {
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.topbarLeft,
-.topbarRight {
-  display: flex;
-  align-items: center;
-
-  gap: $space-6;
-
-  a {
-    color: $color-text-secondary;
-
-    text-decoration: none;
-
-    font-size: $text-sm;
-
-    transition: color .25s ease;
-
-    &:hover {
-      color: $color-primary;
-    }
-  }
-}
-// ==================================== MOBILE MENU ====================
-
-.mobileMenu {
-  position: fixed;
-
-  top: 90px;
-  left: 0;
-
-  width: 100%;
-  height: calc(100vh - 90px);
-
-  background: white;
-
-  padding: $space-7;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: $space-6;
-
-  transform: translateX(-100%);
-
-  transition: transform .3s ease;
-
-  z-index: 999;
-}
-
-.mobileOpen {
-  transform: translateX(0);
-}
-
-.mobileLink {
-  text-decoration: none;
-
-  color: $color-text-primary;
-
-  font-size: $text-lg;
-  font-weight: $fw-medium;
-}
-
-
-.mobileTitle {
-  display: block;
-
-  margin-bottom: $space-3;
-
-  color: $color-text-primary;
-
-  font-size: $text-md;
-
-  font-weight: $fw-bold;
-}
-
-.mobileSubmenu {
-  display: flex;
-  flex-direction: column;
-
-  gap: $space-3;
-
-  padding-left: $space-4;
-}
-.overlay {
-  position: fixed;
-  inset: 0;
-
-  background: rgba(0, 0, 0, .4);
-  backdrop-filter: blur(4px);
-
-  z-index: 998;
-}
-@media (max-width: $bp-tablet) {
-  .navbar {
-    height: 76px;
-  }
-
-  .logo {
-    img {
-      width: 150px;
-    }
-  }
-
-  .actions {
-    gap: $space-2;
-  }
-
-  .actions > button:first-child {
-    display: none;
-  }
-
-  .mobileMenu {
-    top: 76px;
-    height: calc(100vh - 76px);
-    padding: $space-5;
-  }
-}
-// ==================================== MOBILE MENU ====================
-
-
-
-
-
-// ==================================== RESPONSIVE====================
-
-@media (max-width: $bp-laptop) {
-
-  .desktopNav {
-    display: none;
-  }
-
-  .menuBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .topbar {
-    display: none;
-  }
-
-  .logo {
-
-    img {
-      width: 180px;
-    }
-  }
-}
-
-
-// ==================================== RESPONSIVE====================
-
-
-
-// ==================================== DROPDOWN====================
-// ==================================== DROPDOWN====================
 .dropdown {
   position: relative;
 
@@ -301,11 +214,9 @@
   align-items: center;
 
   &:hover {
-
     .dropdownMenu {
       opacity: 1;
       visibility: visible;
-
       transform: translateY(0);
     }
   }
@@ -313,26 +224,23 @@
 
 .dropdownMenu {
   position: absolute;
-
-  top: 130%;
+  top: calc(100% + 18px);
   left: 0;
 
   min-width: 240px;
 
-  background: white;
-
-  border: 1px solid $color-border;
-
-  border-radius: $radius-lg;
-
-  box-shadow: $shadow-md;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
 
   padding: $space-3;
 
-  display: flex;
-  flex-direction: column;
+  border-radius: $radius-lg;
+  border: 1px solid $color-border;
 
-  gap: $space-2;
+  background: $color-surface;
+
+  box-shadow: $shadow-md;
 
   opacity: 0;
   visibility: hidden;
@@ -348,9 +256,7 @@
 }
 
 .dropdownItem {
-  padding:
-    $space-3
-    $space-4;
+  padding: $space-3 $space-4;
 
   border-radius: $radius-md;
 
@@ -363,10 +269,198 @@
     color .25s ease;
 
   &:hover {
-    background: rgba(26,161,165,.08);
-
+    background: rgba(26, 161, 165, .08);
     color: $color-primary;
   }
 }
-// ==================================== DROPDOWN====================
-// ==================================== DROPDOWN====================
+
+/* ================= APPLICATION MEGA MENU ================= */
+
+.applicationDropdown {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+
+  &:hover {
+    .applicationMenu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+}
+
+.applicationMenu {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+
+  width: 540px;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateX(-50%) translateY(10px);
+
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    visibility .25s ease;
+
+  z-index: 999;
+}
+
+.applicationContent {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: $space-6;
+
+  padding: $space-6;
+
+  border-radius: $radius-xl;
+  border: 1px solid $color-border;
+
+  background: $color-surface;
+
+  box-shadow: $shadow-lg;
+}
+
+.applicationLeft {
+  h3 {
+    color: $color-text-primary;
+    font-size: $text-lg;
+    font-weight: $fw-bold;
+  }
+
+  p {
+    margin-top: $space-3;
+    margin-bottom: $space-5;
+
+    color: $color-text-secondary;
+
+    font-size: $text-sm;
+    line-height: 1.7;
+  }
+}
+
+.applicationRight {
+  flex-shrink: 0;
+}
+
+/* ================= MOBILE MENU ================= */
+
+.mobileMenu {
+  position: fixed;
+  top: 84px;
+  left: 0;
+
+  width: 100%;
+  height: calc(100vh - 84px);
+
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+
+  padding: $space-7;
+
+  background: $color-surface;
+
+  transform: translateX(-100%);
+
+  transition: transform .3s ease;
+
+  z-index: 999;
+}
+
+.mobileOpen {
+  transform: translateX(0);
+}
+
+.mobileLink {
+  color: $color-text-primary;
+
+  text-decoration: none;
+
+  font-size: $text-lg;
+  font-weight: $fw-medium;
+}
+
+.mobileTitle {
+  display: block;
+
+  margin-bottom: $space-3;
+
+  color: $color-text-primary;
+
+  font-size: $text-md;
+  font-weight: $fw-bold;
+}
+
+.mobileSubmenu {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+
+  padding-left: $space-4;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, .4);
+  backdrop-filter: blur(4px);
+
+  z-index: 998;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: $bp-laptop) {
+  .topbar {
+    display: none;
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .applicationDropdown {
+    display: none;
+  }
+
+  .navbar {
+    height: 76px;
+  }
+
+  .logo {
+    img {
+      width: 170px;
+    }
+  }
+
+  .menuBtn {
+    display: inline-flex;
+  }
+
+  .mobileMenu {
+    top: 76px;
+    height: calc(100vh - 76px);
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .logo {
+    img {
+      width: 150px;
+    }
+  }
+
+  .mobileMenu {
+    padding: $space-5;
+  }
+}

@@ -1,0 +1,15 @@
+@use "@/styles/abstracts/variables" as *;
+
+.box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: $space-4;
+
+  border-radius: $radius-lg;
+ background: $color-surface;
+  border: 1px solid $color-border;
+
+  box-shadow: $shadow-sm;
+}

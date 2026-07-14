@@ -34,8 +34,8 @@
 // VARIANTS
 
 .primary {
-  background: $color-primary;
-  color: white;
+  background: $color-accent;
+color: $color-text-primary;
 
   &:hover {
     background: $color-primary-dark;

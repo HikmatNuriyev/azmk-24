@@ -3,13 +3,19 @@
 $color-primary: #1aa1a5;
 $color-primary-dark: #148488;
 
-$color-text-primary: #0a2342;
-$color-text-secondary: #5b6470;
+$color-background: var(--color-bg);
+$color-surface: var(--color-surface);
 
-$color-background: #f8fafc;
-$color-surface: #ffffff;
+$color-text-primary: var(--color-text-primary);
+$color-text-secondary: var(--color-text-secondary);
 
-$color-border: #e5e7eb;
+$color-border: var(--color-border);
+$color-dark-surface: var(--color-dark-surface);
+
+$color-on-dark: #ffffff;
+$color-on-dark-secondary: rgba(255,255,255,.72);
+$color-accent: var(--color-accent);
+$color-highlight: var(--color-highlight);
 
 // TYPOGRAPHY
 $text-xs: clamp(12px, 1vw, 13px);
@@ -36,11 +42,7 @@ $space-7: 48px;
 $space-8: 64px;
 $space-9: 96px;
 
-// RADIUS
-$radius-sm: 8px;
-$radius-md: 12px;
-$radius-lg: 20px;
-$radius-xl: 32px;
+
 
 // SHADOWS
 $shadow-sm:
