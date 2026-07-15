@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiOutlineEnvelope, HiOutlinePhone } from "react-icons/hi2";
 
@@ -12,6 +11,10 @@ export default function TopBar() {
     <div className={style.topbar}>
       <Container>
         <div className={style.topbarContent}>
+          <span className={style.topbarLabel}>
+            Azərbaycan Mikro-Kredit BOKT
+          </span>
+
           <div className={style.topbarRight}>
             <a href="tel:*6300">
               <HiOutlinePhone />
@@ -25,35 +28,17 @@ export default function TopBar() {
               aria-label="WhatsApp"
             >
               <FaWhatsapp />
+              <span>WhatsApp</span>
             </a>
 
             <a href="mailto:info@azmk.az">
               <HiOutlineEnvelope />
+              <span>info@azmk.az</span>
             </a>
 
             <span className={style.separator}></span>
 
-            <button
-              type="button"
-              className={style.langBtn}
-            >
-              AZ
-            </button>
-
-            <span className={style.separator}></span>
-
-           <ThemeToggle variant="topbar" />
-
-            <span className={style.separator}></span>
-
-            {/* Accessibility panel buraya gələcək */}
-            <button
-              type="button"
-              className={style.utilityBtn}
-              aria-label="Accessibility"
-            >
-              ♿
-            </button>
+            <ThemeToggle variant="topbar" />
           </div>
         </div>
       </Container>

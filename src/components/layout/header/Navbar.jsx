@@ -1,7 +1,5 @@
-
-
 "use client";
-import ThemeToggle from "@/components/ui/theme-toggle";
+
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -18,8 +16,6 @@ import MobileMenu from "./MobileMenu";
 import NavDropdown from "./NavDropdown";
 
 import Container from "@/components/ui/container";
-import Button from "@/components/ui/button";
-import QRCodeBox from "@/components/ui/qr-code";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +25,7 @@ export default function Navbar() {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -58,7 +54,17 @@ export default function Navbar() {
           <nav className={style.desktopNav}>
             {navLinks.map((item) => {
               if (item.submenu) {
-                return <NavDropdown key={item.title} item={item} />;
+                const isActive =
+                  pathname === item.href ||
+                  item.submenu.some((sub) => pathname === sub.href);
+
+                return (
+                  <NavDropdown
+                    key={item.title}
+                    item={item}
+                    isActive={isActive}
+                  />
+                );
               }
 
               return (
@@ -69,47 +75,25 @@ export default function Navbar() {
                     ${style.navLink}
                     ${pathname === item.href ? style.active : ""}
                   `}
+                  aria-current={pathname === item.href ? "page" : undefined}
                 >
                   {item.title}
                 </Link>
               );
             })}
 
-            <div className={style.applicationDropdown}>
-              <span className={style.navLink}>
-                Onlayn Müraciət
-              </span>
-
-              <div className={style.applicationMenu}>
-                <div className={style.applicationContent}>
-                  <div className={style.applicationLeft}>
-                    <h3>Onlayn Müraciət</h3>
-
-                    <p>
-                      Kredit və lizinq müraciətlərinizi bir neçə dəqiqəyə
-                      göndərin. QR kodu skan edərək müraciət səhifəsinə keçə
-                      bilərsiniz.
-                    </p>
-
-                    <Link href="/muraciet">
-                      <Button>Müraciət Et</Button>
-                    </Link>
-                  </div>
-
-                  <div className={style.applicationRight}>
-                    <QRCodeBox value="https://apps.apple.com/az/app/kredit-evi/id1611922467" />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Link href="/muraciet" className={style.applicationLink}>
+              Onlayn Müraciət
+            </Link>
           </nav>
 
           <div className={style.actions}>
             <button
               className={style.menuBtn}
               onClick={() => setIsOpen(!isOpen)}
-              aria-label="Menu"
+              aria-label={isOpen ? "Menyunu bağla" : "Menyunu aç"}
               aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
             >
               {isOpen ? <X /> : <Menu />}
             </button>

@@ -11,8 +11,13 @@ export default function ThemeToggle({ variant = "default" }) {
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "light";
 
-    setTheme(savedTheme);
     document.documentElement.setAttribute("data-theme", savedTheme);
+
+    const frame = window.requestAnimationFrame(() => {
+      setTheme(savedTheme);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   const toggleTheme = () => {
@@ -27,7 +32,7 @@ export default function ThemeToggle({ variant = "default" }) {
     <button
       className={`${style.toggle} ${variant === "topbar" ? style.topbar : ""}`}
       onClick={toggleTheme}
-      aria-label="Tema dəyiş"
+      aria-label={theme === "light" ? "Tünd temanı aktiv et" : "Açıq temanı aktiv et"}
       type="button"
     >
       {theme === "light" ? <Moon /> : <Sun />}

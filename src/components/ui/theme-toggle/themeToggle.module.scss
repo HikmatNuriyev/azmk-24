@@ -17,9 +17,9 @@
   cursor: pointer;
 
   transition:
-    background .25s ease,
-    color .25s ease,
-    border-color .25s ease;
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
 
   &:hover {
     color: $color-primary;
@@ -29,6 +29,12 @@
   svg {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle {
+    transition: none;
   }
 }
 

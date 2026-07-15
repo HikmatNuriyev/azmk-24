@@ -8,6 +8,7 @@ export default function sitemap() {
     "/filiallar",
     "/hesabat",
     "/muraciet",
+    "/elaqe",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

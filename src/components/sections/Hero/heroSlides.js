@@ -1,59 +1,110 @@
+import { productsData } from "@/components/sections/products-page/productsData";
+import { servicesData } from "@/components/sections/services/servicesData";
 
-export const heroSlides = [
+export const HERO_ROUTES = Object.freeze({
+  campaign: null,
+  products: "/mehsullar",
+});
+
+const productDescriptions = Object.fromEntries(
+  servicesData.map((service) => [service.title, service.description]),
+);
+
+export const heroSlideConfig = [
   {
-    badge: "Yeni Kampaniya",
-
-    title:
-      "Sərfəli Mikro Kredit İmkanları",
-
+    id: "sample-campaign",
+    type: "campaign",
+    enabled: false,
+    contentStatus: "placeholder",
+    eyebrow: "Xüsusi kampaniya",
+    title: "Yeni kampaniya məlumatı",
     description:
-      "Sahibkarlar və fərdi müştərilər üçün çevik və etibarlı maliyyə həlləri təqdim edirik.",
-
-    primaryButton: "Onlayn Müraciət",
-
-    secondaryButton: "Ətraflı Bax",
-
-    href: "/contact",
-
-    image: "/images/istehlak.svg",
+      "Təsdiqlənmiş kampaniya məzmunu və şərtləri burada təqdim ediləcək.",
+    href: HERO_ROUTES.campaign,
+    ctaLabel: "Kampaniya ilə tanış ol",
+    image: "/images/Logonext.webp",
+    imageAlt: "Azərbaycan Mikro-Kredit loqosu",
+    productReference: null,
   },
-
   {
-    badge: "Qızıl Girovu",
-
-    title:
-      "Qızıl Girovu ilə Sürətli Kredit",
-
-    description:
-      "Qızıl girovu əsasında rahat şərtlərlə sürətli kredit əldə edin.",
-
-    primaryButton: "Müraciət Et",
-
-    secondaryButton: "Şərtlərə Bax",
-
-    href: "/kredit",
-
+    id: "gold-loan",
+    type: "product",
+    enabled: true,
+    eyebrow: "Qızıl girovu ilə maliyyə",
+    title: "Qızıl Lombardı",
+    description: productDescriptions["Qızıl Lombardı"],
+    href: HERO_ROUTES.products,
+    ctaLabel: "Şərtlərə bax",
     image: "/images/gold.svg",
-    
+    imageAlt: "Qızıl Lombardı məhsulu üçün illüstrasiya",
+    productReference: "Lombard Krediti",
   },
-
   {
-    badge: "Lizinq",
-
-    title:
-      "Biznesiniz üçün Lizinq Həlləri",
-
-    description:
-      "Müasir lizinq həlləri ilə biznesinizi daha sürətli inkişaf etdirin.",
-
-    primaryButton: "Lizinqə Müraciət",
-
-    secondaryButton: "Daha Ətraflı",
-
-    href: "/lizinq",
-
+    id: "car-leasing",
+    type: "product",
+    enabled: true,
+    eyebrow: "Avtomobil maliyyələşdirilməsi",
+    title: "Maşın Lizinqi",
+    description: productDescriptions["Maşın Lizinqi"],
+    href: HERO_ROUTES.products,
+    ctaLabel: "Şərtlərə bax",
     image: "/images/lizinq.svg",
-  
+    imageAlt: "Maşın Lizinqi məhsulu üçün illüstrasiya",
+    productReference: "AvtoLizinq",
+  },
+  {
+    id: "consumer-loan",
+    type: "product",
+    enabled: true,
+    eyebrow: "Gündəlik ehtiyaclar üçün maliyyə",
+    title: "İstehlak Krediti",
+    description: productDescriptions["İstehlak Krediti"],
+    href: HERO_ROUTES.products,
+    ctaLabel: "Şərtlərə bax",
+    image: "/images/istehlak.svg",
+    imageAlt: "İstehlak Krediti məhsulu üçün illüstrasiya",
+    productReference: "İstehlak Krediti",
   },
 ];
 
+const productsByTitle = new Map(
+  productsData.map((product) => [product.title, product]),
+);
+
+export function getEnabledHeroSlides() {
+  return heroSlideConfig
+    .filter((slide) => {
+      if (!slide.enabled) return false;
+
+      if (!slide.href) {
+        throw new Error(`Aktiv Hero slaydı üçün real marşrut yoxdur: ${slide.id}`);
+      }
+
+      return true;
+    })
+    .map((slide) => {
+      if (!slide.productReference) {
+        return {
+          ...slide,
+          facts: [],
+        };
+      }
+
+      const product = productsByTitle.get(slide.productReference);
+
+      if (!product) {
+        throw new Error(
+          `Hero məhsul məlumatı tapılmadı: ${slide.productReference}`,
+        );
+      }
+
+      return {
+        ...slide,
+        facts: [
+          { label: "Məbləğ", value: product.amount },
+          { label: "Müddət", value: product.duration },
+          { label: "Faiz", value: product.rate },
+        ],
+      };
+    });
+}

@@ -2,17 +2,22 @@
 "use client";
 
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
 import style from "./header.module.scss";
 
 export default function NavDropdown({
   item,
+  isActive = false,
 }) {
   return (
-    <div className={style.dropdown}>
-      <span className={style.navLink}>
+    <details className={style.dropdown}>
+      <summary
+        className={`${style.navLink} ${style.dropdownTrigger} ${isActive ? style.active : ""}`}
+      >
         {item.title}
-      </span>
+        <ChevronDown aria-hidden="true" />
+      </summary>
 
       <div className={style.dropdownMenu}>
         {item.submenu.map((sub) => (
@@ -25,7 +30,7 @@ export default function NavDropdown({
           </Link>
         ))}
       </div>
-    </div>
+    </details>
   );
 }
 

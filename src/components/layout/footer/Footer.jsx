@@ -49,7 +49,7 @@ export default function Footer() {
     FAQ / Yardım Mərkəzi
   </Link>
 
-  <Link href="/contact">
+  <Link href="/elaqe">
     Əlaqə
   </Link>
 
@@ -112,10 +112,10 @@ export default function Footer() {
                 info@azmk.az
               </a>
 
-              <a href="#">
+              <Link href="/elaqe">
                 <MapPin />
                 Bakı, Azərbaycan
-              </a>
+              </Link>
             </div>
 
           </div>

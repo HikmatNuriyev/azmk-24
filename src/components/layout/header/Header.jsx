@@ -7,8 +7,8 @@ export default function Header() {
   return (
     <header className={style.header}>
       <div className={style.wrapper}>
-        <Navbar />
         <TopBar />
+        <Navbar />
       </div>
     </header>
   );

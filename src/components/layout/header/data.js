@@ -43,7 +43,7 @@ export const navLinks = [
 
   {
     title: "Əlaqə",
-    href: "/contact",
+    href: "/elaqe",
   },
 ];
 
