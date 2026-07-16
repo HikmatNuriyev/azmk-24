@@ -38,7 +38,7 @@ export default function TopBar() {
 
             <span className={style.separator}></span>
 
-            <ThemeToggle variant="topbar" />
+            {/* <ThemeToggle variant="topbar" /> */}
           </div>
         </div>
       </Container>

@@ -66,7 +66,7 @@ export default function Calculator() {
     <section className={style.calculator}>
       <Container>
         <div className={style.heading}>
-          <span className={style.badge}>Kalkulyator</span>
+       
 
           <Title as="h2" size="lg">
             Kredit Kalkulyatoru

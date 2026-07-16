@@ -56,22 +56,22 @@ export default function ProductsPage() {
                   </div>
                 </div>
 
-                <Link href={product.href}>
+                {/* <Link href={product.href}>
                   <Button fullWidth>Müraciət et</Button>
-                </Link>
+                </Link> */}
               </div>
             </Card>
           ))}
         </div>
 
-        <div className={style.tableBlock}>
+        {/* <div className={style.tableBlock}>
           <div className={style.tableHeading}>
             <Title as="h2" size="md">
               Məhsulların müqayisəsi
             </Title>
-          </div>
+          </div> */}
 
-          <div className={style.tableWrapper}>
+          {/* <div className={style.tableWrapper}>
             <table>
               <thead>
                 <tr>
@@ -93,10 +93,10 @@ export default function ProductsPage() {
                 ))}
               </tbody>
             </table>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
 
-        <div className={style.cta}>
+        {/* <div className={style.cta}>
           <div>
             <h2>Müraciət etməyə hazırsınız?</h2>
             <p>
@@ -107,7 +107,7 @@ export default function ProductsPage() {
           <Link href="/muraciet">
             <Button size="lg">Onlayn Müraciət</Button>
           </Link>
-        </div>
+        </div> */}
       </Container>
     </section>
   );

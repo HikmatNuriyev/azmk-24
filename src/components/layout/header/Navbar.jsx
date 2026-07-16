@@ -82,9 +82,9 @@ export default function Navbar() {
               );
             })}
 
-            <Link href="/muraciet" className={style.applicationLink}>
+            {/* <Link href="/muraciet" className={style.applicationLink}>
               Onlayn Müraciət
-            </Link>
+            </Link> */}
           </nav>
 
           <div className={style.actions}>

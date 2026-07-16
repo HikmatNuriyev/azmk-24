@@ -39,9 +39,6 @@ export default function ApplicationPage() {
 
         <div className={style.hero}>
 
-          <span className={style.badge}>
-            Onlayn Müraciət
-          </span>
 
           <Title as="h1" size="hero">
             Müraciətinizi Göndərin
@@ -99,13 +96,13 @@ export default function ApplicationPage() {
 
             <div className={style.field}>
               <label>
-                Ad Soyad
+                Fin kod
               </label>
 
               <input
                 type="text"
                 name="fullname"
-                placeholder="Ad və soyadınızı daxil edin"
+                placeholder="Fin kodu daxil edin"
                 value={formData.fullname}
                 onChange={handleChange}
                 required
@@ -156,7 +153,7 @@ export default function ApplicationPage() {
               </select>
             </div>
 
-            <div className={style.field}>
+            {/* <div className={style.field}>
               <label>
                 Məbləğ
               </label>
@@ -168,8 +165,8 @@ export default function ApplicationPage() {
                 value={formData.amount}
                 onChange={handleChange}
               />
-            </div>
-
+            </div> */}
+{/* 
             <div className={style.field}>
               <label>
                 Əlavə qeyd
@@ -182,7 +179,7 @@ export default function ApplicationPage() {
                 value={formData.note}
                 onChange={handleChange}
               />
-            </div>
+            </div> */}
 
             <Button
               type="submit"

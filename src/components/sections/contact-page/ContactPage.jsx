@@ -43,13 +43,13 @@ export default function ContactPage() {
     <div className={style.page}>
       <Container>
         <div className={style.inner}>
-          <header className={style.introduction}>
+          {/* <header className={style.introduction}>
             <p className={style.eyebrow}>Azərbaycan Mikro-Kredit BOKT</p>
             <h1>Əlaqə</h1>
             <p className={style.lead}>
               AZMK ilə əlaqə saxlamaq üçün sizə uyğun əlaqə vasitəsini seçin.
             </p>
-          </header>
+          </header> */}
 
           <section
             className={style.contactMethods}

@@ -38,7 +38,7 @@ export default function ResultCard({
       </p>
 
       <Link href="/muraciet">
-        <Button fullWidth size="lg">
+        <Button variant="third" fullWidth size="lg">
           Onlayn Müraciət
         </Button>
       </Link>

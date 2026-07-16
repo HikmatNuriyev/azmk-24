@@ -1,245 +1,388 @@
 @use "@/styles/abstracts/variables" as *;
 
 .mobileApp {
-  padding-block: $space-7;
+  padding-block: $space-6;
+  font-family: var(--font-ibm-plex-sans), var(--font-geist-sans), Arial, sans-serif;
 }
 
 .wrapper {
-  max-width: 1240px;
-  height: 340px;
-
+  max-width: 1290px;
+  height: 370px;
   margin-inline: auto;
-
+gap: $space-6;
   display: grid;
-  grid-template-columns: 52% 48%;
+  grid-template-columns: 56% 44%;
 
-  position: relative;
+  // border: 1px solid $color-border;
+  border-radius: $radius-2xl;
 
-  border-radius: 36px;
-  border: 1px solid $color-border;
-
-  background: rgba(26, 161, 165, .06);
-
+  // background: $color-surface;
   overflow: hidden;
 }
 
 .content {
-  padding: 44px 64px;
-
-  position: relative;
-  z-index: 3;
+  padding: 10px 56px;
+background: $color-surface;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0%  $radius-2xl $radius-2xl 0;
 
   h2 {
-    color: $color-text-primary;
-
-    font-size: clamp(34px, 3vw, 48px);
-    line-height: 1.05;
-    font-weight: $fw-bold;
-    letter-spacing: -1px;
-  }
-
-  p {
-    margin-top: 18px;
-
+    margin-top: $space-2;
     max-width: 520px;
 
-    color: $color-text-secondary;
+    color: $color-text-primary;
 
-    font-size: 18px;
-    line-height: 1.55;
+    font-size: clamp(40px, 4vw, 52px);
+    line-height: 1.08;
+    font-weight: $fw-bold;
+    letter-spacing: -.035em;
   }
+}
+
+.eyebrow {
+  color: $color-primary-dark;
+
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: $fw-semibold;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.description {
+  margin-top: $space-3;
+  max-width: 540px;
+
+  color: $color-text-secondary;
+
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .download {
-  margin-top: 16px;
+  margin-top: $space-4;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
   align-items: center;
-  gap: 32px;
+  gap: $space-6;
 }
 
 .qrBox {
-  width: 150px;
-  height: 150px;
+  width: 168px;
+  height: 168px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  flex-shrink: 0;
-
-  border-radius: 18px;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
 
   background: #ffffff;
-
-  box-shadow: 0 16px 32px rgba(0, 0, 0, .08);
+  box-shadow: $shadow-sm;
 }
 
 .downloadInfo {
-  max-width: 260px;
+  min-width: 0;
+}
 
-  span {
-    color: $color-text-primary;
+.qrInstruction {
+  max-width: 310px;
 
-    font-size: 17px;
-    line-height: 1.55;
-  }
+  color: $color-text-primary;
+
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: $fw-medium;
 }
 
 .storeLinks {
-  margin-top: 24px;
+  margin-top: $space-5;
 
   display: flex;
-  gap: 14px;
+  gap: $space-3;
 
   a {
-    width: 46px;
-    height: 46px;
+    min-width: 0;
+    height: 56px;
+    padding-inline: 14px;
 
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 10px;
+    flex: 1;
 
-    border-radius: 14px;
+    border: 1px solid $color-dark-surface;
+    border-radius: $radius-md;
 
-    background: #050505;
-    color: #ffffff;
+    background: $color-dark-surface;
+    color: $color-on-dark;
 
     transition:
-      transform .25s ease,
-      background .25s ease;
+      background-color 180ms ease,
+      border-color 180ms ease;
 
     &:hover {
-      transform: translateY(-2px);
-      background: $color-primary;
+      border-color: $color-primary-dark;
+      background: $color-primary-dark;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $color-accent;
+      outline-offset: 3px;
     }
 
     svg {
-      width: 22px;
-      height: 22px;
+      width: 23px;
+      height: 23px;
+      flex-shrink: 0;
     }
+  }
+}
+
+.storeText {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  small,
+  strong {
+    display: block;
+    white-space: nowrap;
+  }
+
+  small {
+    color: $color-on-dark-secondary;
+
+    font-size: 10px;
+    line-height: 1;
+    font-weight: $fw-regular;
+  }
+
+  strong {
+    font-size: 14px;
+    line-height: 1.1;
+    font-weight: $fw-semibold;
   }
 }
 
 .visual {
+  min-width: 0;
   position: relative;
 
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
 
-  background:
-    radial-gradient(
-      circle at 55% 45%,
-      rgba(26, 161, 165, .22),
-      transparent 42%
-    );
+  // border-left: 1px solid $color-border;
+
+  background: $color-surface;
+  border-radius: $radius-2xl;
 }
 
 .phoneMockup {
+  width: min(230px, calc(100% - 48px));
+  padding: 8px;
+
   position: absolute;
-
-  right: 120px;
-    bottom: -200px;
-
-  width: 285px;
-  height: 570px;
-
-  padding: 11px;
-
-  border-radius: 48px;
-
-  background: #101319;
-
-  box-shadow: 0 34px 70px rgba(0, 0, 0, .22);
-
-  z-index: 2;
-}
-
-.phoneIsland {
-  position: absolute;
-
-  top: 22px;
+  top: 34px;
   left: 50%;
 
-  width: 82px;
-  height: 24px;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 42px;
 
-  border-radius: 50px;
-
-  background: #000;
+  background: $color-dark-surface;
+  box-shadow: 0 16px 34px rgba(8, 26, 51, .12);
 
   transform: translateX(-50%);
-
-  z-index: 5;
 }
 
 .phoneScreen {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 393 / 852;
 
   overflow: hidden;
 
-  border-radius: 38px;
-
+  border-radius: 34px;
   background: #f3f5f7;
 
   img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
   }
 }
 
+@media (max-width: $bp-desktop) {
+  .storeLinks {
+    flex-direction: column;
+
+    a {
+      flex: 0 0 56px;
+    }
+  }
+}
+
 @media (max-width: $bp-laptop) {
+  .wrapper {
+    height: 360px;
+  }
+
+  .content {
+    padding: 10px 40px;
+  }
+
+  .download {
+    grid-template-columns: 156px minmax(0, 1fr);
+    gap: $space-5;
+  }
+
+  .qrBox {
+    width: 156px;
+    height: 156px;
+  }
+
+  .storeLinks {
+    gap: 10px;
+
+    a {
+      padding-inline: 12px;
+    }
+  }
+
+  .phoneMockup {
+    width: min(218px, calc(100% - 40px));
+    top: 42px;
+  }
+}
+
+@media (max-width: 900px) {
   .wrapper {
     height: auto;
     grid-template-columns: 1fr;
   }
 
   .content {
-    padding: $space-6;
+    padding: $space-6 $space-7;
   }
 
   .visual {
-    height: 300px;
+    height: 330px;
+
+    border-top: 1px solid $color-border;
+    border-left: 0;
   }
 
   .phoneMockup {
-    right: 50%;
-    bottom: -210px;
-
-    transform: translateX(50%);
+    width: min(208px, calc(100% - 48px));
+    top: 28px;
   }
 }
 
-@media (max-width: $bp-tablet) {
+@media (max-width: 640px) {
+  .mobileApp {
+    padding-block: $space-6;
+  }
+
+  .wrapper {
+    border-radius: $radius-xl;
+  }
+
   .content {
     padding: $space-5;
 
     h2 {
-      font-size: 34px;
+      font-size: clamp(34px, 10vw, 42px);
     }
+  }
 
-    p {
-      font-size: $text-sm;
-    }
+  .description {
+    font-size: 16px;
+    line-height: 1.55;
   }
 
   .download {
-    flex-direction: column;
-    align-items: flex-start;
+    margin-top: $space-5;
+    display: block;
+  }
+
+  .qrBox,
+  .qrInstruction {
+    display: none;
+  }
+
+  .storeLinks {
+    margin-top: 0;
+    flex-direction: row;
+
+    a {
+      flex: 1;
+    }
   }
 
   .visual {
-    height: 260px;
+    height: 290px;
   }
 
   .phoneMockup {
-    width: 230px;
-    height: 460px;
+    width: min(190px, calc(100% - 40px));
+    top: 24px;
+    border-radius: 34px;
+  }
 
-    bottom: -170px;
+  .phoneScreen {
+    border-radius: 27px;
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .content {
+    padding: $space-5;
+  }
+
+  .storeLinks {
+    gap: 8px;
+
+    a {
+      height: 54px;
+      padding-inline: 10px;
+      gap: 8px;
+
+      svg {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+
+  .storeText {
+    small {
+      font-size: 9px;
+    }
+
+    strong {
+      font-size: 13px;
+    }
+  }
+
+  .visual {
+    height: 270px;
+  }
+
+  .phoneMockup {
+    width: min(178px, calc(100% - 32px));
+    top: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .storeLinks a {
+    transition: none;
   }
 }

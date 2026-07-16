@@ -295,7 +295,7 @@ export default function HeroSlider({ slides }) {
           </div>
         </div>
 
-        <button
+        {/* <button
           type="button"
           className={style.autoplayControl}
           onClick={handleAutoplayToggle}
@@ -322,7 +322,7 @@ export default function HeroSlider({ slides }) {
                 ? "Dayandır"
                 : "Davam etdir"}
           </span>
-        </button>
+        </button> */}
       </div>
 
       <p

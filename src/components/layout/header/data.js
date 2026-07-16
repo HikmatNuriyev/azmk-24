@@ -13,10 +13,10 @@ export const navLinks = [
     title: "Haqqımızda",
     href: "/about",
     submenu: [
-      {
-        title: "Vakansiya",
-        href: "/vakansiya",
-      },
+      // {
+      //   title: "Vakansiya",
+      //   href: "/vakansiya",
+      // },
 
       {
         title: "Məhsullar",
