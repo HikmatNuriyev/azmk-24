@@ -1,4 +1,5 @@
 import Calculator from "@/components/sections/calculator";
+import ContactPage from "@/components/sections/contact-page";
 import ContactPreview from "@/components/sections/contact-preview";
 import Hero from "@/components/sections/Hero";
 import MobileApp from "@/components/sections/mobile-app";
@@ -15,6 +16,7 @@ export default function Home() {
       <MobileApp />
       <Calculator/>
       <ContactPreview />
+     
     </>
   );
 }

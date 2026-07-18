@@ -6,6 +6,7 @@ import Container from "@/components/ui/container";
 
 import style from "./mobileApp.module.scss";
 import appScreen from "../../../../public/images/mobile-app.jpeg";
+import appSadiq from "../../../../public/images/appSadiq.jpeg";
 
 const STORE_LINKS = [
   {

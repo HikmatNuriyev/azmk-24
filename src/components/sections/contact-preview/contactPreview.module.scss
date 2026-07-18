@@ -33,94 +33,277 @@
   color: $color-text-secondary;
 }
 
-.wrapper {
+.office {
   display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(420px, 7fr);
 
-  grid-template-columns: .95fr 1.05fr;
+  overflow: hidden;
 
-  gap: $space-6;
+  border: 1px solid #d8e1e6;
+  border-radius: 16px;
 
-  align-items: stretch;
+  background: #ffffff;
 }
 
-.cards {
-  display: flex;
-  flex-direction: column;
-
-  gap: $space-4;
+.eyebrow {
+  color: #0b6f73;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: .02em;
 }
 
-.contactCard {
-  display: flex;
-  align-items: center;
-
-  gap: $space-4;
+.officeInformation {
+  padding: 48px;
 
   h3 {
-    color: $color-text-primary;
+    margin-top: 8px;
 
-    font-size: $text-md;
-    font-weight: $fw-bold;
+    color: #0a2342;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -.02em;
   }
 
-  p {
-    margin-top: $space-1;
+  address {
+    max-width: 440px;
+    margin-top: 24px;
 
-    color: $color-text-secondary;
+    color: #0a2342;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.55;
   }
 }
 
-.icon {
-  width: 60px;
-  height: 60px;
+.officeDetails {
+  margin-top: 32px;
+
+  display: grid;
+  gap: 16px;
+
+  > div {
+    padding-top: 16px;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+
+    border-top: 1px solid #d8e1e6;
+  }
+
+  dt {
+    color: rgba(10,35,66,.64);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  dd {
+    min-width: 0;
+
+    color: #0a2342;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+    text-align: right;
+
+    a {
+      overflow-wrap: anywhere;
+
+      &:hover {
+        color: #0b6f73;
+      }
+
+      &:focus-visible {
+        outline: 3px solid #43b8af;
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.officeActions {
+  margin-top: 32px;
 
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: $radius-lg;
-
-  background: rgba(26,161,165,.08);
-
-  svg {
-    width: 28px;
-    height: 28px;
-
-    color: $color-primary;
-  }
-}
-
-.cta {
-  margin-top: $space-2;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .mapWrapper {
+  position: relative;
+
+  min-width: 0;
+  min-height: 440px;
+
   overflow: hidden;
 
-  border-radius: $radius-xl;
-
-  min-height: 100%;
+  background: #e9eef2;
 
   iframe {
+    display: block;
+
     width: 100%;
     height: 100%;
 
-    min-height: 420px;
+    min-height: 440px;
 
-    border: none;
+    border: 0;
+  }
+}
+
+.mapAction {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2;
+
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border: 1px solid #d8e1e6;
+  border-radius: 10px;
+
+  background: rgba(255,255,255,.94);
+
+  color: #081a33;
+
+  box-shadow: 0 10px 30px rgba(8,26,51,.14);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration: none;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    border-color: #43b8af;
+
+    background: #fff;
+
+    box-shadow: 0 12px 32px rgba(8,26,51,.18);
+  }
+
+  &:focus-visible {
+    outline: 3px solid #43b8af;
+    outline-offset: 3px;
   }
 }
 
 @media (max-width: $bp-laptop) {
 
-  .wrapper {
+  .office {
     grid-template-columns: 1fr;
   }
 
   .mapWrapper {
+    min-height: 340px;
 
     iframe {
       min-height: 340px;
     }
+  }
+}
+
+@media (max-width: $bp-tablet) {
+
+  .officeInformation {
+    padding: 36px;
+  }
+
+  .mapWrapper {
+    min-height: 320px;
+
+    iframe {
+      min-height: 320px;
+    }
+  }
+}
+
+@media (max-width: $bp-mobile) {
+
+  .officeInformation {
+    padding: 24px;
+
+    h3 {
+      font-size: 32px;
+    }
+
+    address {
+      font-size: 18px;
+    }
+  }
+
+  .officeDetails {
+    > div {
+      display: grid;
+      gap: 5px;
+    }
+
+    dd {
+      text-align: left;
+    }
+  }
+
+  .officeActions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .mapWrapper {
+    display: grid;
+
+    gap: 12px;
+
+    min-height: auto;
+
+    overflow: visible;
+
+    background: transparent;
+
+    iframe {
+      min-height: 280px;
+
+      border: 1px solid #d8e1e6;
+      border-radius: 12px;
+    }
+  }
+
+  .mapAction {
+    position: static;
+
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .mapAction {
+    transition: none;
   }
 }

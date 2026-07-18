@@ -601,3 +601,126 @@
     transition: none;
   }
 }
+
+// ===============\
+.mapWrapper {
+  position: relative;
+  min-width: 0;
+  min-height: 440px;
+  overflow: hidden;
+
+  background: #e9eef2;
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 440px;
+
+    border: 0;
+  }
+}
+
+.mapAction {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2;
+
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border: 1px solid #d8e1e6;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.94);
+  color: #081a33;
+
+  box-shadow: 0 10px 30px rgba(8, 26, 51, 0.14);
+  backdrop-filter: blur(10px);
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration: none;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    border-color: #43b8af;
+    background: #ffffff;
+    box-shadow: 0 12px 32px rgba(8, 26, 51, 0.18);
+  }
+
+  &:focus-visible {
+    outline: 3px solid #43b8af;
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: $bp-laptop) {
+  .mapWrapper {
+    min-height: 340px;
+
+    iframe {
+      min-height: 340px;
+    }
+  }
+}
+
+@media (max-width: $bp-tablet) {
+  .mapWrapper {
+    min-height: 320px;
+
+    iframe {
+      min-height: 320px;
+    }
+  }
+}
+
+@media (max-width: $bp-mobile) {
+  .mapWrapper {
+    display: grid;
+    gap: 12px;
+
+    min-height: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    iframe {
+      min-height: 280px;
+
+      border: 1px solid #d8e1e6;
+      border-radius: 12px;
+    }
+  }
+
+  .mapAction {
+    position: static;
+
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapAction {
+    transition: none;
+  }
+}

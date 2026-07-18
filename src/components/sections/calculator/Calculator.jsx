@@ -12,6 +12,7 @@ import ResultCard from "./components/ResultCard";
 
 import { calculatorData } from "./calculatorData";
 import { calculateLoan } from "./utils/calculateLoan";
+import { formatCurrency } from "./utils/formatCurrency";
 
 export default function Calculator() {
   const [activeType, setActiveType] = useState("consumer");
@@ -123,7 +124,7 @@ export default function Calculator() {
 
                   <div className={style.estimatedBox}>
                     <span>Təxmini kredit məbləği</span>
-                    <strong>{estimatedGoldAmount} AZN</strong>
+                    <strong>{formatCurrency(estimatedGoldAmount)} ₼</strong>
                   </div>
                 </>
               ) : (
@@ -133,7 +134,7 @@ export default function Calculator() {
                   min={activeData.minAmount}
                   max={activeData.maxAmount}
                   step={100}
-                  suffix="AZN"
+                  suffix="₼"
                   onChange={setAmount}
                 />
               )}
@@ -166,10 +167,12 @@ export default function Calculator() {
                   <div className={style.estimatedBox}>
                     <span>İlkin ödəniş</span>
                     <strong>
-                      {Math.round(
-                        amount * (calculatorData.auto.initialPaymentRate / 100),
-                      )}{" "}
-                      AZN
+                      {formatCurrency(
+                        Math.round(
+                          amount *
+                            (calculatorData.auto.initialPaymentRate / 100),
+                        ),
+                      )} ₼
                     </strong>
                   </div>
                 </>
@@ -186,7 +189,7 @@ export default function Calculator() {
               />
 
               <RangeInput
-                label="Faiz"
+                label="Faiz dərəcəsi"
                 value={rate}
                 min={activeData.minRate}
                 max={activeData.maxRate}

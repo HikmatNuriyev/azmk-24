@@ -1,15 +1,30 @@
-import {
-  Phone,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 import style from "./contactPreview.module.scss";
 
 import Container from "@/components/ui/container";
 import Title from "@/components/ui/title";
-import Card from "@/components/ui/card";
-import Button from "@/components/ui/button";
+import { branchesData } from "@/components/sections/branches-page/branchesData";
+import CopyAddressButton from "@/components/sections/contact-page/CopyAddressButton";
+
+const contactDetails = Object.freeze({
+  support: {
+    display: "*6300",
+    href: "tel:*6300",
+  },
+  email: {
+    display: "info@azmk.az",
+    href: "mailto:info@azmk.az",
+  },
+});
+
+const headOffice = branchesData.find((branch) =>
+  branch.address.includes("Nizami Gəncəvi"),
+);
+
+if (!headOffice) {
+  throw new Error("Əlaqə bölməsi üçün təsdiqlənmiş Bakı ofisi tapılmadı.");
+}
 
 export default function ContactPreview() {
   return (
@@ -17,10 +32,7 @@ export default function ContactPreview() {
       <Container>
 
         <div className={style.heading}>
-
-          <span className={style.badge}>
-            Əlaqə
-          </span>
+{/*  */}
 
           <Title as="h2" size="lg">
             Bizimlə Əlaqə
@@ -33,89 +45,65 @@ export default function ContactPreview() {
 
         </div>
 
-        <div className={style.wrapper}>
+        <section
+          className={style.office}
+          aria-labelledby="contact-preview-office-title"
+        >
+          <div className={style.officeInformation}>
+            <p className={style.eyebrow}>Ofis məlumatı</p>
+            <h3 id="contact-preview-office-title">Baş ofis</h3>
 
-          {/* LEFT */}
-          <div className={style.cards}>
+            <address>{headOffice.address}</address>
 
-            <Card padding="md">
-              <div className={style.contactCard}>
-
-                <div className={style.icon}>
-                  <Phone />
-                </div>
-
-                <div>
-                  <h3>*6300</h3>
-
-                  <p>
-                    Telefon dəstəyi
-                  </p>
-                </div>
-
+            <dl className={style.officeDetails}>
+              <div>
+                <dt>Müştəri dəstəyi</dt>
+                <dd>
+                  <a href={contactDetails.support.href}>
+                    {contactDetails.support.display}
+                  </a>
+                </dd>
               </div>
-            </Card>
 
-            <Card padding="md">
-              <div className={style.contactCard}>
-
-                <div className={style.icon}>
-                  <Mail />
-                </div>
-
-                <div>
-                  <h3>
-                    info@azmk.az
-                  </h3>
-
-                  <p>
-                    Email ünvanı
-                  </p>
-                </div>
-
+              <div>
+                <dt>E-poçt</dt>
+                <dd>
+                  <a href={contactDetails.email.href}>
+                    {contactDetails.email.display}
+                  </a>
+                </dd>
               </div>
-            </Card>
+            </dl>
 
-            <Card padding="md">
-              <div className={style.contactCard}>
-
-                <div className={style.icon}>
-                  <MapPin />
-                </div>
-
-                <div>
-                  <h3>
-                    Bakı, Azərbaycan
-                  </h3>
-
-                  <p>
-                    Baş ofis
-                  </p>
-                </div>
-
-              </div>
-            </Card>
-
-            <div className={style.cta}>
-              <Button size="lg">
-                Onlayn Müraciət
-              </Button>
+            <div className={style.officeActions}>
+              <CopyAddressButton address={headOffice.address} />
             </div>
-
           </div>
 
-          {/* RIGHT */}
           <div className={style.mapWrapper}>
 
             <iframe
-              src="https://maps.google.com/maps?q=Baku&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://www.google.com/maps?q=40.371599,49.8356626&z=18&output=embed"
+              title="Azərbaycan Mikro-Kredit BOKT — Bakı baş ofisi"
               loading="lazy"
               allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
             />
+
+            <a
+              href="https://www.google.com/maps/place/Azerbaycan+Mikro+Kredit/@40.3715794,49.8349953,18z/data=!4m6!3m5!1s0x40307dc846040033:0x50b5ce0661e1b420!8m2!3d40.371599!4d49.8356626!16s%2Fg%2F11b5z0zt3s?hl=tr&entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={style.mapAction}
+              aria-label="Azərbaycan Mikro-Kredit BOKT Bakı baş ofisini Google Xəritədə aç; yeni pəncərədə açılır"
+            >
+              Google Xəritədə aç
+              <ExternalLink aria-hidden="true" />
+            </a>
 
           </div>
 
-        </div>
+        </section>
 
       </Container>
     </section>

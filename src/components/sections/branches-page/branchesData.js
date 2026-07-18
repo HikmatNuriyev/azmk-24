@@ -1,8 +1,10 @@
 export const branchesData = [
   {
     title: "MXD filialı",
-    address: "Bakı şəh., Nizami küç. 68",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Bakı şəhəri Nizami küçəsi 68",
+ address: "Nizami Gəncəvi küçəsi 68, Bakı 1005, Azərbaycan",
+  mapUrl:
+    "https://www.google.com/maps/search/?api=1&query=68+Nizami+Gəncəvi,+Bakı+1005,+Azərbaycan",
+    // mapUrl: "https://www.google.com/maps/search/?api=1&query=Bakı şəhəri Nizami küçəsi 68",
   },
   {
     title: "Cəlilabad Filialı",

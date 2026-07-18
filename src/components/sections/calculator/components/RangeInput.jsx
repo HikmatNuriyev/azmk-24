@@ -9,33 +9,33 @@ export default function RangeInput({
   suffix = "",
   onChange,
 }) {
-const handleChange = (e) => {
-  let nextValue = Number(e.target.value);
+  const formatValue = (number) => {
+    const [integer, fraction] = String(number).split(".");
+    const groupedInteger = integer.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
-  if (Number.isNaN(nextValue)) return;
+    return fraction ? `${groupedInteger},${fraction}` : groupedInteger;
+  };
 
-  if (nextValue < min) nextValue = min;
-  if (nextValue > max) nextValue = max;
+  const handleChange = (e) => {
+    let nextValue = Number(e.target.value);
 
-  onChange(nextValue);
-};
+    if (Number.isNaN(nextValue)) return;
+
+    if (nextValue < min) nextValue = min;
+    if (nextValue > max) nextValue = max;
+
+    onChange(nextValue);
+  };
+
   return (
     <div className={style.rangeGroup}>
       <div className={style.rangeHeader}>
         <label>{label}</label>
 
-        <div className={style.valueBox}>
-          <input
-            type="number"
-            value={value}
-            min={min}
-            max={max}
-            step={step}
-            onChange={handleChange}
-          />
-
-          <span>{suffix}</span>
-        </div>
+        <strong className={style.rangeValue}>
+          <span>{formatValue(value)}</span>
+          {suffix && <span className={style.rangeSuffix}>{suffix}</span>}
+        </strong>
       </div>
 
       <input
@@ -49,8 +49,12 @@ const handleChange = (e) => {
       />
 
       <div className={style.rangeLimits}>
-        <span>{min} {suffix}</span>
-        <span>{max} {suffix}</span>
+        <span>
+          {formatValue(min)} {suffix}
+        </span>
+        <span>
+          {formatValue(max)} {suffix}
+        </span>
       </div>
     </div>
   );

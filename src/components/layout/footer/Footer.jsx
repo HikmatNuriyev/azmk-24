@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
+import logoF from "../../../../public/images/logoFooter.webp";
 import {
   Phone,
   Mail,
@@ -9,8 +9,6 @@ import {
 import style from "./footer.module.scss";
 
 import Container from "@/components/ui/container";
-
-import logo from "../../../../public/images/Logonext.webp";
 
 export default function Footer() {
   return (
@@ -24,7 +22,7 @@ export default function Footer() {
 
             <Link href="/">
               <Image
-                src={logo}
+                src={logoF}
                 alt="AZMK Logo"
               />
             </Link>
@@ -49,16 +47,20 @@ export default function Footer() {
     FAQ / Yardım Mərkəzi
   </Link>
 
+  <Link href="/tehlukesizlik">
+    Təhlükəsizlik
+  </Link>
+
   <Link href="/elaqe">
     Əlaqə
   </Link>
 
-  <Link href="/privacy-policy">
+  <Link href="/mexfilik-siyaseti">
     Məxfilik Siyasəti
   </Link>
 
-  <Link href="/terms">
-    Xidmət Şərtləri
+  <Link href="/istifade-sertleri">
+    İstifadə Şərtləri
   </Link>
 </div>
             <div>
@@ -66,15 +68,15 @@ export default function Footer() {
                 Məhsullar
               </h3>
 
-              <Link href="/istehlak-krediti">
+              <Link href="/mehsullar">
                 İstehlak Krediti
               </Link>
 
-              <Link href="/qizil-lombardi">
+              <Link href="/mehsullar">
                 Qızıl Lombardı
               </Link>
 
-              <Link href="/masin-lizinqi">
+              <Link href="/mehsullar">
                 Maşın Lizinqi
               </Link>
             </div>
@@ -92,9 +94,6 @@ export default function Footer() {
                 Rəhbərlik
               </Link>
 
-              <Link href="/vakansiya">
-                Vakansiyalar
-              </Link>
             </div>
 
             <div>

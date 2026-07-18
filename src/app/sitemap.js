@@ -9,6 +9,10 @@ export default function sitemap() {
     "/hesabat",
     "/muraciet",
     "/elaqe",
+    "/faq",
+    "/tehlukesizlik",
+    "/mexfilik-siyaseti",
+    "/istifade-sertleri",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

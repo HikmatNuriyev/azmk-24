@@ -3,11 +3,9 @@ import {
   ArrowRight,
   ExternalLink,
   Mail,
-  MapPin,
   MessageCircle,
   Phone,
 } from "lucide-react";
-
 import Container from "@/components/ui/container";
 import { branchesData } from "@/components/sections/branches-page/branchesData";
 
@@ -31,7 +29,7 @@ const contactDetails = Object.freeze({
 });
 
 const headOffice = branchesData.find((branch) =>
-  branch.address.includes("Nizami küç."),
+  branch.address.includes("Nizami Gəncəvi"),
 );
 
 if (!headOffice) {
@@ -190,24 +188,22 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className={style.locationSurface}>
-              <span className={style.locationIcon} aria-hidden="true">
-                <MapPin />
-              </span>
-
-              <div>
-                <p>Azərbaycan Mikro-Kredit BOKT</p>
-                <strong>Bakı ofisi</strong>
-              </div>
-
+            <div className={style.mapWrapper}>
+             <iframe
+              src="https://www.google.com/maps?q=40.371599,49.8356626&z=18&output=embed"
+              title="Azərbaycan Mikro-Kredit BOKT — Bakı baş ofisi"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
               <a
-                href={headOffice.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={style.mapAction}
-                aria-label="Baş ofisin ünvanına Google Xəritədə bax; yeni pəncərədə açılır"
-              >
-                Xəritədə bax
+              href="https://www.google.com/maps/place/Azerbaycan+Mikro+Kredit/@40.3715794,49.8349953,18z/data=!4m6!3m5!1s0x40307dc846040033:0x50b5ce0661e1b420!8m2!3d40.371599!4d49.8356626!16s%2Fg%2F11b5z0zt3s?hl=tr&entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={style.mapAction}
+              aria-label="Azərbaycan Mikro-Kredit BOKT Bakı baş ofisini Google Xəritədə aç; yeni pəncərədə açılır"
+            >
+                Google Xəritədə aç
                 <ExternalLink aria-hidden="true" />
               </a>
             </div>
@@ -235,13 +231,13 @@ export default function ContactPage() {
                 <ArrowRight aria-hidden="true" />
               </Link>
 
-              <Link
+              {/* <Link
                 href="/muraciet"
                 className={`${style.action} ${style.primaryAction}`}
               >
                 Onlayn müraciət
                 <ArrowRight aria-hidden="true" />
-              </Link>
+              </Link> */}
             </div>
           </section>
         </div>
