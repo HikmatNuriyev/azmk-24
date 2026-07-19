@@ -161,6 +161,58 @@
   white-space: nowrap;
 }
 
+.rangeEditor {
+  width: 170px;
+  max-width: 52%;
+  min-width: 132px;
+  min-height: 48px;
+  flex: 0 1 170px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding-inline: 12px;
+
+  border: 1px solid $color-border;
+  border-radius: 10px;
+
+  background: $color-surface;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+
+  &:focus-within {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 4px rgba(26, 161, 165, .08);
+  }
+
+  .rangeSuffix {
+    flex-shrink: 0;
+  }
+}
+
+.rangeValueInput {
+  width: 100%;
+  min-width: 0;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: $color-text-primary;
+
+  font-family: inherit;
+  font-size: clamp(18px, 2vw, 20px);
+  font-weight: $fw-bold;
+  line-height: 1.25;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
 .rangeSuffix {
   color: $color-text-secondary;
   font-size: 13px;
@@ -496,6 +548,7 @@ color : white;
   .rangeGroup,
   .rangeHeader,
   .rangeValue,
+  .rangeEditor,
   .field,
   .estimatedBox,
   .resultCard {
@@ -575,6 +628,23 @@ color : white;
 
   .rangeGroup {
     padding-bottom: $space-4;
+  }
+
+  .rangeHeader {
+    align-items: center;
+    gap: $space-2;
+
+    label {
+      min-width: 0;
+    }
+  }
+
+  .rangeEditor {
+    width: 46%;
+    min-width: 124px;
+    max-width: 148px;
+
+    padding-inline: 10px;
   }
 
   .estimatedBox {

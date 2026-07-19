@@ -30,7 +30,8 @@ export default function SecurityPage() {
         </p>
         <ul>
           <li>Müştəri dəstəyi: *6300</li>
-          <li>Telefon və WhatsApp: +994 51 230 86 64</li>
+          <li>Telefon: +994 51 230 86 64</li>
+          <li>WhatsApp: +994 10 260 63 00</li>
           <li>E-poçt: info@azmk.az</li>
         </ul>
         <p>

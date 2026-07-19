@@ -91,7 +91,7 @@ Rəsmi bayram günlərində iş qrafikində dəyişiklik ola bilər. Ən aktual 
       {
         question: "AZMK ilə necə əlaqə saxlamaq olar?",
         answer:
-          "Müştəri dəstəyi üçün *6300 qısa nömrəsindən, +994 51 230 86 64 telefon və WhatsApp xəttindən və info@azmk.az e-poçt ünvanından istifadə edə bilərsiniz.",
+          "Müştəri dəstəyi üçün *6300 qısa nömrəsindən, +994 51 230 86 64 telefon nömrəsindən, +994 10 260 63 00 WhatsApp xəttindən və info@azmk.az e-poçt ünvanından istifadə edə bilərsiniz.",
         link: {
           href: "/elaqe",
           label: "Bütün əlaqə məlumatlarını aç",

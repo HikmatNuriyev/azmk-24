@@ -22,10 +22,10 @@ export default function TopBar() {
             </a>
 
             <a
-              href="https://wa.me/994512308664"
+              href="https://wa.me/994102606300"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="WhatsApp"
+              aria-label="AZMK ilə WhatsApp-da əlaqə saxla; yeni pəncərədə açılır"
             >
               <FaWhatsapp />
               <span>WhatsApp</span>

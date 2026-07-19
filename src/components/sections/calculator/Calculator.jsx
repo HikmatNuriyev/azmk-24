@@ -135,6 +135,7 @@ export default function Calculator() {
                   max={activeData.maxAmount}
                   step={100}
                   suffix="₼"
+                  editable
                   onChange={setAmount}
                 />
               )}

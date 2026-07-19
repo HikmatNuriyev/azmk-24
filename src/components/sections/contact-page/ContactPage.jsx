@@ -21,7 +21,7 @@ const contactDetails = Object.freeze({
     display: "+994 51 230 86 64",
     href: "tel:+994512308664",
   },
-  whatsapp: "https://wa.me/994512308664",
+  whatsapp: "https://wa.me/994102606300",
   email: {
     display: "info@azmk.az",
     href: "mailto:info@azmk.az",
@@ -90,7 +90,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${style.action} ${style.secondaryAction}`}
-                    aria-label="WhatsApp-da yaz; yeni pəncərədə açılır"
+                    aria-label="+994 10 260 63 00 nömrəsinə WhatsApp-da yaz; yeni pəncərədə açılır"
                   >
                     <MessageCircle aria-hidden="true" />
                     WhatsApp-da yaz

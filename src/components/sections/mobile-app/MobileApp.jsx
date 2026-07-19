@@ -11,12 +11,14 @@ import appSadiq from "../../../../public/images/appSadiq.jpeg";
 const STORE_LINKS = [
   {
     label: "Google Play",
-    ariaLabel: "AZMK Mobile tətbiqini Google Play-dən yükləyin",
+    href: "https://play.google.com/store/apps/details?id=com.azmk.azmkapp&hl=en",
+    ariaLabel: "AZMK tətbiqini Google Play-də aç; yeni pəncərədə açılır",
     icon: FaGooglePlay,
   },
   {
     label: "App Store",
-    ariaLabel: "AZMK Mobile tətbiqini App Store-dan yükləyin",
+    href: "https://apps.apple.com/us/app/azmk/id1630330104",
+    ariaLabel: "AZMK tətbiqini App Store-da aç; yeni pəncərədə açılır",
     icon: FaApple,
   },
 ];
@@ -65,7 +67,9 @@ export default function MobileApp() {
                     return (
                       <a
                         key={store.label}
-                        href="#"
+                        href={store.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         aria-label={store.ariaLabel}
                       >
                         <StoreIcon aria-hidden="true" focusable="false" />
