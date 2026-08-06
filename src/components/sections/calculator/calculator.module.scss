@@ -11,7 +11,7 @@
 
   h2 {
     color: $color-text-primary;
-    letter-spacing: -.025em;
+    letter-spacing: -0.025em;
   }
 
   p {
@@ -30,7 +30,7 @@
   padding: $space-2 $space-4;
 
   border-radius: $radius-xl;
-  background: rgba(26, 161, 165, .08);
+  background: rgba(26, 161, 165, 0.08);
 
   color: $color-primary;
   font-size: $text-sm;
@@ -45,7 +45,7 @@
   border-radius: $radius-lg;
   background: $color-surface;
 
-  box-shadow: 0 16px 44px rgba(10, 35, 66, .07);
+  box-shadow: 0 16px 44px rgba(10, 35, 66, 0.07);
 }
 
 .tabs {
@@ -58,9 +58,9 @@
   padding: 6px;
   margin-bottom: $space-6;
 
-  border: 1px solid rgba(26, 161, 165, .14);
+  border: 1px solid rgba(26, 161, 165, 0.14);
   border-radius: $radius-md;
-  background: rgba(26, 161, 165, .06);
+  background: rgba(26, 161, 165, 0.06);
 
   button {
     min-width: 0;
@@ -85,8 +85,8 @@
       box-shadow 180ms ease;
 
     &:hover {
-      border-color: rgba(26, 161, 165, .22);
-      background: rgba(255, 255, 255, .72);
+      border-color: rgba(26, 161, 165, 0.22);
+      background: rgba(255, 255, 255, 0.72);
       color: $color-primary-dark;
     }
   }
@@ -96,7 +96,7 @@
   border-color: $color-accent !important;
   background: $color-accent !important;
   color: $color-on-dark !important;
-  box-shadow: 0 4px 12px rgba(10, 35, 66, .16);
+  box-shadow: 0 4px 12px rgba(10, 35, 66, 0.16);
 
   &:hover {
     border-color: $color-accent !important;
@@ -107,7 +107,7 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(340px, .92fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
   gap: 40px;
 
   align-items: stretch;
@@ -140,7 +140,7 @@
     font-size: $text-sm;
     font-weight: $fw-semibold;
     line-height: 1.4;
-    letter-spacing: .01em;
+    letter-spacing: 0.01em;
   }
 }
 
@@ -185,7 +185,7 @@
 
   &:focus-within {
     border-color: $color-primary;
-    box-shadow: 0 0 0 4px rgba(26, 161, 165, .08);
+    box-shadow: 0 0 0 4px rgba(26, 161, 165, 0.08);
   }
 
   .rangeSuffix {
@@ -217,7 +217,7 @@
   color: $color-text-secondary;
   font-size: 13px;
   font-weight: $fw-semibold;
-  letter-spacing: .01em;
+  letter-spacing: 0.01em;
 }
 
 .range {
@@ -233,8 +233,8 @@
     height: 6px;
 
     border-radius: 999px;
-    background: rgba(26, 161, 165, .18);
-    box-shadow: inset 0 0 0 1px rgba(26, 161, 165, .08);
+    background: rgba(26, 161, 165, 0.18);
+    box-shadow: inset 0 0 0 1px rgba(26, 161, 165, 0.08);
   }
 
   &::-webkit-slider-thumb {
@@ -249,14 +249,14 @@
     background: $color-primary-dark;
     box-shadow:
       0 0 0 1px $color-primary,
-      0 3px 8px rgba(10, 35, 66, .18);
+      0 3px 8px rgba(10, 35, 66, 0.18);
   }
 
   &::-moz-range-track {
     height: 6px;
 
     border-radius: 999px;
-    background: rgba(26, 161, 165, .18);
+    background: rgba(26, 161, 165, 0.18);
   }
 
   &::-moz-range-progress {
@@ -275,7 +275,7 @@
     background: $color-primary-dark;
     box-shadow:
       0 0 0 1px $color-primary,
-      0 3px 8px rgba(10, 35, 66, .18);
+      0 3px 8px rgba(10, 35, 66, 0.18);
   }
 }
 
@@ -297,11 +297,17 @@
 
   min-height: 100%;
 
-  border: 1px solid rgba(255, 255, 255, .16);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: $radius-lg;
-  background: $color-highlight;
+  background:
+    linear-gradient(135deg, #081a3359, #081a3326),
+    linear-gradient(
+      135deg,
+      var(--brand-gradient-start) 0%,
+      var(--brand-gradient-end) 100%
+    );
   color: $color-on-dark;
-  box-shadow: 0 18px 42px rgba(132, 113, 208, .18);
+  box-shadow: 0 18px 42px rgba(132, 113, 208, 0.18);
 
   height: auto;
   display: flex;
@@ -313,7 +319,7 @@
   font-size: 13px;
   font-weight: $fw-semibold;
   line-height: 1.4;
-  letter-spacing: .045em;
+  letter-spacing: 0.045em;
   text-transform: uppercase;
 }
 
@@ -321,12 +327,12 @@
   margin-top: 10px;
   padding-bottom: 28px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, .18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 
   font-size: clamp(36px, 3.5vw, 48px);
   font-weight: $fw-bold;
   line-height: 1.05;
-  letter-spacing: -.035em;
+  letter-spacing: -0.035em;
   font-variant-numeric: tabular-nums;
 }
 
@@ -342,7 +348,7 @@
     gap: $space-5;
 
     padding-block: $space-4;
-    border-bottom: 1px solid rgba(255, 255, 255, .14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   }
 
   span {
@@ -422,7 +428,7 @@
     font-size: $text-sm;
     font-weight: $fw-semibold;
     line-height: 1.4;
-    letter-spacing: .01em;
+    letter-spacing: 0.01em;
   }
 
   input,
@@ -448,7 +454,7 @@
 
     &:focus {
       border-color: $color-primary;
-      box-shadow: 0 0 0 4px rgba(26, 161, 165, .08);
+      box-shadow: 0 0 0 4px rgba(26, 161, 165, 0.08);
     }
   }
 
@@ -475,7 +481,7 @@
     font-size: $text-sm;
     font-weight: $fw-semibold;
     line-height: 1.4;
-    letter-spacing: .01em;
+    letter-spacing: 0.01em;
   }
 
   strong {
@@ -487,9 +493,9 @@
     font-variant-numeric: tabular-nums;
   }
 }
-.calculateButton{
-background-color : white;
-color : white;
+.calculateButton {
+  background-color: white;
+  color: white;
 }
 
 @media (min-width: 960px) and (max-width: 1100px) {
@@ -500,7 +506,7 @@ color : white;
   .wrapper {
     grid-template-columns:
       minmax(0, 1.1fr)
-      minmax(320px, .9fr);
+      minmax(320px, 0.9fr);
     gap: $space-5;
   }
 

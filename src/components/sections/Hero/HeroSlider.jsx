@@ -242,16 +242,16 @@ export default function HeroSlider({ slides }) {
                   )}
                 </div>
 
-                <div
-                  className={`${style.slideVisual} ${slide.type === "campaign" ? style.campaignVisual : ""}`}
-                >
+                <div className={style.slideVisual}>
                   <Image
                     src={slide.image}
                     alt={slide.imageAlt}
-                    width={520}
-                    height={380}
+                   
+                    layout="fill"
+                    quality={100}
                     priority={index === 0}
-                    sizes="(max-width: 480px) calc(100vw - 72px), 520px"
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 100vw, 45vw"
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
               </div>

@@ -1,0 +1,85 @@
+@use "@/styles/abstracts/variables" as *;
+
+.page {
+  min-height: 60vh;
+  padding-block: $space-7;
+
+  display: grid;
+  place-items: center;
+}
+
+.inner {
+  width: min(100% - 40px, 520px);
+  text-align: center;
+}
+
+.code {
+  display: block;
+
+  color: $color-accent;
+
+  font-size: clamp(64px, 16vw, 104px);
+  line-height: 1;
+  font-weight: $fw-bold;
+  letter-spacing: -.04em;
+}
+
+.title {
+  margin-top: $space-3;
+
+  color: $color-text-primary;
+
+  font-size: clamp(24px, 5vw, 34px);
+  line-height: 1.2;
+  font-weight: $fw-bold;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+
+.text {
+  margin-top: $space-3;
+
+  color: $color-text-secondary;
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.btn {
+  margin-top: $space-5;
+  min-height: 52px;
+  padding-inline: $space-6;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid $color-accent;
+  border-radius: $radius-md;
+
+  background: $color-accent;
+  color: $color-on-dark;
+
+  font-size: 15px;
+  font-weight: $fw-semibold;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+
+  &:hover {
+    border-color: $color-primary-dark;
+    background: $color-primary-dark;
+  }
+
+  &:focus-visible {
+    outline: 3px solid $color-accent;
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}

@@ -22,7 +22,7 @@ export default function MobileMenu({ isOpen, setIsOpen }) {
           ${isOpen ? style.mobileOpen : ""}
         `}
         aria-hidden={!isOpen}
-        inert={isOpen ? undefined : ""}
+       inert={!isOpen}
       >
         <nav aria-label="Mobil naviqasiya" className={style.mobileNav}>
           {navLinks.map((item) => {

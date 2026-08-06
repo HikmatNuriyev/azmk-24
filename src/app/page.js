@@ -6,7 +6,14 @@ import MobileApp from "@/components/sections/mobile-app";
 import Services from "@/components/sections/services";
 import TrustStrip from "@/components/sections/trust-strip";
 
-
+export const metadata = {
+  title: {
+    absolute: "Azərbaycan Mikro Kredit — İstehlak krediti, lombard və lizinq",
+  },
+  description:
+    "İstehlak krediti, qızıl lombardı və maşın lizinqi. Onlayn kredit kalkulyatoru ilə aylıq ödənişinizi hesablayın.",
+  alternates: { canonical: "/" },
+};
 export default function Home() {
   return (
     <>
@@ -14,9 +21,8 @@ export default function Home() {
       <TrustStrip />
       <Services />
       <MobileApp />
-      <Calculator/>
+      <Calculator />
       <ContactPreview />
-     
     </>
   );
 }

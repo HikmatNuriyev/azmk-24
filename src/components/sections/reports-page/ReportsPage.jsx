@@ -6,14 +6,13 @@ import Container from "@/components/ui/container";
 import Title from "@/components/ui/title";
 import Card from "@/components/ui/card";
 
-import { reportsData } from "./reportsData";
+import {reports} from "./reportsData";
 
 export default function ReportsPage() {
   return (
     <section className={style.reports}>
       <Container>
         <div className={style.hero}>
-          <span className={style.badge}>Audit Hesabatları</span>
 
           <Title as="h1" size="hero">
             Maliyyə Şəffaflığı
@@ -26,7 +25,7 @@ export default function ReportsPage() {
         </div>
 
         <div className={style.grid}>
-          {reportsData.map((report) => (
+          {reports.map((report) => (
             <Card key={report.year} padding="md">
               <div className={style.reportCard}>
                 <div className={style.icon}>

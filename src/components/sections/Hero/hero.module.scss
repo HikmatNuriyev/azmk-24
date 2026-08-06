@@ -8,7 +8,8 @@
   background: #f8fafc;
   color: #0a2342;
 
-  font-family: var(--font-ibm-plex-sans), var(--font-geist-sans), Arial, sans-serif;
+  font-family:
+    var(--font-ibm-plex-sans), var(--font-geist-sans), Arial, sans-serif;
 }
 
 .inner {
@@ -35,7 +36,7 @@
     font-size: clamp(40px, 3.7vw, 52px);
     font-weight: 600;
     line-height: 1.1;
-    letter-spacing: -.025em;
+    letter-spacing: -0.025em;
   }
 }
 
@@ -46,14 +47,14 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
-  letter-spacing: .02em;
+  letter-spacing: 0.02em;
 }
 
 .introduction {
   max-width: 460px;
   padding-bottom: 4px;
 
-  color: rgba(10, 35, 66, .76);
+  color: rgba(10, 35, 66, 0.76);
   font-size: 17px;
   line-height: 1.65;
 }
@@ -114,7 +115,7 @@
     font-size: clamp(38px, 3.2vw, 46px);
     font-weight: 600;
     line-height: 1.12;
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -123,14 +124,14 @@
   font-size: 13px;
   font-weight: 600;
   line-height: 18px;
-  letter-spacing: .025em;
+  letter-spacing: 0.025em;
 }
 
 .slideDescription {
   max-width: 520px;
   margin-top: 16px;
 
-  color: rgba(10, 35, 66, .76);
+  color: rgba(10, 35, 66, 0.76);
   font-size: 17px;
   line-height: 1.6;
 }
@@ -159,7 +160,7 @@
   }
 
   dt {
-    color: rgba(10, 35, 66, .64);
+    color: rgba(10, 35, 66, 0.64);
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
@@ -219,39 +220,13 @@
 }
 
 .slideVisual {
-  position: relative;
-
+  position: relative; 
   min-width: 0;
-  min-height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 40px 32px;
+  height: 100%; 
 
   overflow: hidden;
-
   border-left: 1px solid #d8e1e6;
-
-  background: rgba(67, 184, 175, .12);
-
-  img {
-    width: 100%;
-    max-width: 520px;
-    max-height: 380px;
-
-    object-fit: contain;
-  }
-}
-
-.campaignVisual {
-  background: #f8fafc;
-
-  img {
-    max-width: 300px;
-    height: auto;
-  }
+ 
 }
 
 .controls {
@@ -296,7 +271,7 @@
       color 160ms ease;
 
     &:hover {
-      background: rgba(67, 184, 175, .08);
+      background: rgba(67, 184, 175, 0.08);
       border-color: #1aa1a5;
       color: #0b6f73;
     }
@@ -323,7 +298,7 @@
 }
 
 .slideCount {
-  color: rgba(10, 35, 66, .64);
+  color: rgba(10, 35, 66, 0.64);
   font-size: 12px;
   font-weight: 600;
   line-height: 18px;
@@ -410,7 +385,7 @@
     color 160ms ease;
 
   &:hover:not(:disabled) {
-    background: rgba(67, 184, 175, .08);
+    background: rgba(67, 184, 175, 0.08);
     border-color: #1aa1a5;
     color: #0b6f73;
   }
@@ -422,7 +397,7 @@
 
   &:disabled {
     cursor: not-allowed;
-    opacity: .7;
+    opacity: 0.7;
   }
 
   svg {
@@ -468,6 +443,7 @@
 
   .slideLayout {
     min-height: auto;
+    height: auto;
     grid-template-columns: 1fr;
   }
 
@@ -477,15 +453,9 @@
   }
 
   .slideVisual {
-    min-height: 300px;
-    padding: 32px 40px;
-
+    height: 300px; // statik — tək sütunlu düzülüşdə grid stretch işləmir
     border-top: 1px solid #d8e1e6;
     border-left: 0;
-
-    img {
-      max-height: 260px;
-    }
   }
 }
 
@@ -504,11 +474,7 @@
   }
 
   .slideVisual {
-    min-height: 270px;
-
-    img {
-      max-height: 230px;
-    }
+    height: 270px;
   }
 }
 
@@ -585,12 +551,7 @@
   }
 
   .slideVisual {
-    min-height: 230px;
-    padding: 24px;
-
-    img {
-      max-height: 205px;
-    }
+    height: 230px;
   }
 
   .controls {

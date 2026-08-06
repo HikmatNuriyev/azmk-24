@@ -1,8 +1,9 @@
 import BranchesPage from "@/components/sections/branches-page";
 
 export const metadata = {
-  title: "Filiallar | Azərbaycan Mikro Kredit",
+  title: "Filiallar",
   description: "Azərbaycan Mikro Kredit filiallarının ünvanları.",
+   alternates: { canonical: "/filiallar" },
 };
 
 export default function Branches() {

@@ -1,0 +1,45 @@
+@use "@/styles/abstracts/variables" as *;
+
+.wrap {
+  min-height: 60vh;
+  padding-block: $space-7;
+
+  display: grid;
+  place-items: center;
+}
+
+.spinner {
+  width: 38px;
+  height: 38px;
+
+  border: 3px solid $color-border;
+  border-top-color: $color-accent;
+  border-radius: 50%;
+
+  animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 2.4s;
+  }
+}

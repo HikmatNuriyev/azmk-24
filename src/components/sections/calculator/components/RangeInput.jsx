@@ -28,10 +28,9 @@ export default function RangeInput({
   const rangeId = `${fieldId}-range`;
   const limitsId = `${fieldId}-limits`;
 
-  const [inputValue, setInputValue] = useState("");
-  const [isEditing, setIsEditing] = useState(false);
+  const [inputValue, setInputValue] = useState(null);
 
-  const displayedInputValue = isEditing ? inputValue : formatValue(value);
+  const displayedInputValue = inputValue ?? formatValue(value);
 
   const inputDigits = displayedInputValue.replace(/\D/g, "");
   const parsedInput = inputDigits ? Number(inputDigits) : null;
@@ -47,6 +46,7 @@ export default function RangeInput({
     if (nextValue < min) nextValue = min;
     if (nextValue > max) nextValue = max;
 
+    setInputValue(null);
     onChange(nextValue);
   };
 
@@ -85,12 +85,14 @@ export default function RangeInput({
 
   const handleInputBlur = (event) => {
     commitInput(event.currentTarget.value);
-    setIsEditing(false);
+    setInputValue(null);
   };
 
   const handleInputKeyDown = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
+      commitInput(event.currentTarget.value);
+      setInputValue(null);
       event.currentTarget.blur();
     }
   };
@@ -117,7 +119,6 @@ export default function RangeInput({
               onChange={handleInputChange}
               onFocus={(event) => {
                 setInputValue(event.currentTarget.value);
-                setIsEditing(true);
                 event.currentTarget.select();
               }}
               onBlur={handleInputBlur}

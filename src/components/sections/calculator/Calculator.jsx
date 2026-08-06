@@ -129,6 +129,7 @@ export default function Calculator() {
                 </>
               ) : (
                 <RangeInput
+                  key={activeType}
                   label={activeType === "auto" ? "Avtomobil dəyəri" : "Məbləğ"}
                   value={amount}
                   min={activeData.minAmount}

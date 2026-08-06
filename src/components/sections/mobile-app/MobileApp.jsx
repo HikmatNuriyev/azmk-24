@@ -1,3 +1,6 @@
+import { floatingCards } from "./data";
+import FloatingCard from "./FloatingCard";
+
 import Image from "next/image";
 import QRCode from "react-qr-code";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
@@ -86,7 +89,7 @@ export default function MobileApp() {
             </div>
           </div>
 
-          <div className={style.visual}>
+          {/* <div className={style.visual}>
             <div className={style.phoneMockup}>
               <div className={style.phoneScreen}>
                 <Image
@@ -96,7 +99,22 @@ export default function MobileApp() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
+          <div className={style.visual}>
+  {floatingCards.map((item) => (
+    <FloatingCard key={item.title} {...item} />
+  ))}
+
+  <div className={style.phoneMockup}>
+    <div className={style.phoneScreen}>
+      <Image
+        src={appScreen}
+        alt="AZMK Mobile tətbiqində kredit və ödənişlərin idarə edilməsi ekranı"
+        sizes="(max-width: 480px) 162px, (max-width: 640px) 174px, (max-width: 900px) 192px, (max-width: 1024px) 202px, 214px"
+      />
+    </div>
+  </div>
+</div>
         </div>
       </Container>
     </section>

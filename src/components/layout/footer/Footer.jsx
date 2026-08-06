@@ -77,7 +77,7 @@ export default function Footer() {
               </Link>
 
               <Link href="/mehsullar">
-                Maşın Lizinqi
+                AvtoLizinq
               </Link>
             </div>
 
@@ -133,6 +133,7 @@ export default function Footer() {
         </div>
 
       </Container>
+      <script src="https://cdn.soft10.io/widget.js" data-customer-id="lc_53a767d43ff6e7d09543006b49651e2c" data-language="az" defer></script>
     </footer>
   );
 }
