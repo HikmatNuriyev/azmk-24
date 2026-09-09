@@ -13,9 +13,7 @@ export default function Hero() {
         <div className={style.inner}>
           <header className={style.heading}>
             <div className={style.headingCopy}>
-              <p className={style.institutionalEyebrow}>
-                Azərbaycan Mikro-Kredit BOKT
-              </p>
+              
 
               <h1 id="home-hero-title">
                 2014-cü ildən etibarlı maliyyə tərəfdaşınız

@@ -1,8 +1,7 @@
-
 // COLORS
 $color-primary: #1aa1a5;
 $color-primary-dark: #148488;
-
+$color-gradient-m: var(--brand-gradient-middle);
 $color-background: var(--color-bg);
 $color-surface: var(--color-surface);
 
@@ -13,7 +12,7 @@ $color-border: var(--color-border);
 $color-dark-surface: var(--color-dark-surface);
 
 $color-on-dark: #ffffff;
-$color-on-dark-secondary: rgba(255,255,255,.72);
+$color-on-dark-secondary: rgba(255, 255, 255, 0.72);
 $color-accent: var(--color-accent);
 $color-highlight: var(--color-highlight);
 
@@ -42,17 +41,12 @@ $space-7: 48px;
 $space-8: 64px;
 $space-9: 96px;
 
-
-
 // SHADOWS
-$shadow-sm:
-  0 1px 2px rgba(0,0,0,.04);
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
 
-$shadow-md:
-  0 8px 24px rgba(0,0,0,.08);
+$shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
 
-$shadow-lg:
-  0 20px 60px rgba(0,0,0,.12);
+$shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
 
 // BREAKPOINTS
 $bp-mobile: 480px;
@@ -61,11 +55,8 @@ $bp-laptop: 1024px;
 $bp-desktop: 1200px;
 $bp-wide: 1440px;
 
-
-
 $radius-sm: 8px;
 $radius-md: 12px;
 $radius-lg: 18px;
 $radius-xl: 24px;
 $radius-2xl: 32px;
-

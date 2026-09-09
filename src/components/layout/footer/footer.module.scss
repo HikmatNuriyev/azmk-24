@@ -3,9 +3,8 @@
 .footer {
   margin-top: $space-7;
 
-  background: $color-accent;
-
-color: $color-surface;
+  background: var(--brand-gradient-middle);
+  color: $color-surface;
 }
 
 .top {
@@ -13,13 +12,12 @@ color: $color-surface;
 
   display: grid;
 
-  grid-template-columns: .9fr 1.1fr;
+  grid-template-columns: 0.9fr 1.1fr;
 
   gap: $space-8;
 }
 
 .brand {
-
   img {
     width: 240px;
     height: auto;
@@ -30,7 +28,7 @@ color: $color-surface;
 
     max-width: 340px;
 
-    color: rgba(255,255,255,.7);
+    color: rgba(255, 255, 255, 0.7);
 
     line-height: 1.7;
   }
@@ -54,11 +52,11 @@ color: $color-surface;
 
     border-radius: 50%;
 
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, 0.08);
 
     transition:
-      background .25s ease,
-      transform .25s ease;
+      background 0.25s ease,
+      transform 0.25s ease;
 
     &:hover {
       background: $color-primary;
@@ -95,14 +93,14 @@ color: $color-surface;
 
     margin-bottom: $space-3;
 
-    color: rgba(255,255,255,.7);
+    color: rgba(255, 255, 255, 0.7);
 
     text-decoration: none;
 
-    transition: color .25s ease;
+    transition: color 0.25s ease;
 
     &:hover {
-     color: $color-text-primary;
+      color: $color-text-primary;
     }
 
     svg {
@@ -115,26 +113,24 @@ color: $color-surface;
 .bottom {
   padding-block: $space-5;
 
-  border-top: 1px solid rgba(255,255,255,.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 
   text-align: center;
 
   p {
-    color: rgba(255,255,255,.6);
+    color: rgba(255, 255, 255, 0.6);
 
     font-size: $text-sm;
   }
 }
 
 @media (max-width: $bp-laptop) {
-
   .top {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: $bp-tablet) {
-
   .links {
     grid-template-columns: 1fr;
   }

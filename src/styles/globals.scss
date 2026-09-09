@@ -19,6 +19,7 @@
 
   // Gradients
   --brand-gradient-start: #6566aa;
+  --brand-gradient-middle: linear-gradient(135deg, #081a3359, #081a3326), linear-gradient(135deg, var(--brand-gradient-start) 0%, var(--brand-gradient-end) 100%);;
 --brand-gradient-end: #41b7ad;
 }
 

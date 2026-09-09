@@ -1,521 +1,9 @@
-
-// @use "@/styles/abstracts/variables" as *;
-
-// /* ==========================================================================
-//    AZMK Mobile — mobile-first
-//    Baza stillər = mobil. Böyük ekranlar yalnız `min-width` ilə əlavə olunur.
-//    Sinif adları köhnə fayldakı ilə eynidir — JSX-də dəyişiklik lazım deyil.
-//    ========================================================================== */
-
-// .mobileApp {
-//   padding-block: $space-6;
-//   font-family: var(--font-ibm-plex-sans), var(--font-geist-sans), Arial, sans-serif;
-// }
-
-// .wrapper {
-//   max-width: 1290px;
-//   margin-inline: auto;
-
-//   display: grid;
-//   grid-template-columns: minmax(0, 1fr);
-
-//   border-radius: $radius-xl;
-//   overflow: hidden;
-// }
-
-// /* --------------------------------------------------------------- content */
-
-// .content {
-//   padding: $space-5;
-//   background: $color-surface;
-
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-
-//   h2 {
-//     margin-top: $space-2;
-//     max-width: 520px;
-
-//     color: $color-text-primary;
-
-//     font-size: clamp(30px, 7.5vw, 52px);
-//     line-height: 1.1;
-//     font-weight: $fw-bold;
-//     letter-spacing: -.03em;
-//     text-wrap: balance;
-//   }
-// }
-
-// .eyebrow {
-//   color: $color-primary-dark;
-
-//   font-size: 13px;
-//   line-height: 1.2;
-//   font-weight: $fw-semibold;
-//   letter-spacing: .12em;
-//   text-transform: uppercase;
-// }
-
-// .description {
-//   margin-top: $space-3;
-//   max-width: 540px;
-
-//   color: $color-text-secondary;
-
-//   font-size: 16px;
-//   line-height: 1.55;
-// }
-
-// /* --------------------------------------------------------------- download */
-
-// .download {
-//   margin-top: $space-5;
-//   display: block;
-// }
-
-// .qrBox,
-// .qrInstruction {
-//   display: none;
-// }
-
-// .downloadInfo {
-//   min-width: 0;
-// }
-
-// .storeLinks {
-//   display: flex;
-//   gap: 8px;
-
-//   a {
-//     flex: 1 1 0;
-//     min-width: 0;
-//     min-height: 56px;
-//     padding-inline: 10px;
-
-//     display: inline-flex;
-//     align-items: center;
-//     justify-content: center;
-//     gap: 8px;
-
-//     border: 1px solid $color-accent;
-//     border-radius: $radius-md;
-
-//     background: $color-accent;
-//     color: $color-on-dark;
-
-//     transition:
-//       background-color 180ms ease,
-//       border-color 180ms ease;
-
-//     &:hover {
-//       border-color: $color-primary-dark;
-//       background: $color-primary-dark;
-//     }
-
-//     &:focus-visible {
-//       outline: 3px solid $color-accent;
-//       outline-offset: 3px;
-//     }
-
-//     svg {
-//       width: 21px;
-//       height: 21px;
-//       flex-shrink: 0;
-//     }
-//   }
-// }
-
-// .storeText {
-//   min-width: 0;
-
-//   display: flex;
-//   flex-direction: column;
-//   gap: 3px;
-
-//   small,
-//   strong {
-//     display: block;
-//     white-space: nowrap;
-//   }
-
-//   small {
-//     color: $color-on-dark-secondary;
-
-//     font-size: 9px;
-//     line-height: 1;
-//     font-weight: $fw-regular;
-//   }
-
-//   strong {
-//     font-size: 13px;
-//     line-height: 1.1;
-//     font-weight: $fw-semibold;
-//   }
-// }
-
-// /* ---------------------------------------------------------------- visual */
-
-// .visual {
-//   position: relative;
-//   min-width: 0;
-//   height: 300px;
-//   overflow: hidden;
-
-//   background:
-//     linear-gradient(
-//       135deg,
-//       rgba(8, 26, 51, .35),
-//       rgba(8, 26, 51, .15)
-//     ),
-//     linear-gradient(
-//       135deg,
-//       var(--brand-gradient-start) 0%,
-//       var(--brand-gradient-end) 100%
-//     );
-// }
-
-// .phoneMockup {
-//   position: absolute;
-//   top: 26px;
-//   left: 50%;
-//   z-index: 1;
-
-//   width: min(186px, 56%);
-//   padding: 7px;
-
-//   border: 1px solid rgba(255, 255, 255, .18);
-//   border-radius: 34px;
-
-//   background: $color-dark-surface;
-//   box-shadow: 0 16px 34px rgba(8, 26, 51, .12);
-
-//   transform: translateX(-50%);
-
-//   mask-image: linear-gradient(to bottom, #000 58%, transparent 92%);
-//   -webkit-mask-image: linear-gradient(to bottom, #000 58%, transparent 92%);
-// }
-
-// .phoneScreen {
-//   width: 100%;
-//   aspect-ratio: 393 / 852;
-//   overflow: hidden;
-
-//   border-radius: 27px;
-//   background: #f3f5f7;
-
-//   img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//   }
-// }
-
-// /* --------------------------------------------------------- floating cards */
-
-// .floatingCard {
-//   position: absolute;
-//   z-index: 3;
-
-//   width: clamp(124px, 42%, 156px);
-//   padding: $space-2 $space-3;
-
-//   display: flex;
-//   align-items: center;
-//   gap: $space-2;
-
-//   border-radius: $radius-md;
-//   border: 1px solid rgba(255, 255, 255, .24);
-//   background: rgba(255, 255, 255, .16);
-//   backdrop-filter: blur(12px);
-//   -webkit-backdrop-filter: blur(12px);
-
-//   color: $color-on-dark;
-//   font-size: $text-xs;
-//   font-weight: $fw-medium;
-//   line-height: 1.3;
-// }
-
-// .floatingIcon {
-//   flex: 0 0 auto;
-
-//   width: 26px;
-//   height: 26px;
-
-//   display: grid;
-//   place-items: center;
-
-//   border-radius: $radius-sm;
-//   background: rgba(255, 255, 255, .22);
-
-//   svg {
-//     width: 15px;
-//     height: 15px;
-//   }
-// }
-
-// /* Mobildə yalnız iki kart görünür — qalan ikisi 900px-dən sonra qayıdır */
-// .wallet {
-//   top: 44px;
-//   left: 12px;
-// }
-
-// .calendar {
-//   right: 12px;
-//   bottom: 40px;
-//   bottom: auto;
-// }
-
-// .application,
-// .security {
-//   display: none;
-// }
-
-// /* ==========================================================================
-//    ≥ 640px — daha geniş telefon, üçüncü kart
-//    ========================================================================== */
-
-// @media (min-width: 640px) {
-//   .content {
-//     padding: $space-6 $space-7;
-//   }
-
-//   .description {
-//     font-size: 18px;
-//     line-height: 1.6;
-//   }
-
-//   .storeLinks {
-//     gap: $space-3;
-
-//     a {
-//       padding-inline: 14px;
-//       justify-content: flex-start;
-
-//       svg {
-//         width: 23px;
-//         height: 23px;
-//       }
-//     }
-//   }
-
-//   .storeText {
-//     small  { font-size: 10px; }
-//     strong { font-size: 14px; }
-//   }
-
-//   .visual {
-//     height: 360px;
-//   }
-
-//   .phoneMockup {
-//     top: 32px;
-//     width: min(208px, 46%);
-//     border-radius: 38px;
-//   }
-
-//   .phoneScreen {
-//     border-radius: 31px;
-//   }
-
-//   .floatingCard {
-//     width: 150px;
-//     padding: $space-3;
-//   }
-
-//   .wallet      { top: 52px;    left: 20px; }
-//   .calendar    { top: 130px;   right: 20px; bottom: auto; }
-//   .application { display: flex; top: 218px; left: 20px; }
-// }
-
-// /* ==========================================================================
-//    ≥ 900px — iki sütun, QR kod, dörd kart
-//    ========================================================================== */
-
-// @media (min-width: 900px) {
-//   .wrapper {
-//     grid-template-columns: 56% minmax(0, 44%);
-//     align-items: stretch;
-//   }
-
-//   .content {
-//     padding: $space-6 $space-7;
-//   }
-
-//   .download {
-//     display: grid;
-//     grid-template-columns: 156px minmax(0, 1fr);
-//     align-items: center;
-//     gap: $space-5;
-//   }
-
-//   .qrBox {
-//     width: 156px;
-//     height: 156px;
-
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-
-//     border: 1px solid $color-border;
-//     border-radius: $radius-lg;
-
-//     background: #ffffff;
-//     box-shadow: $shadow-sm;
-//   }
-
-//   .qrInstruction {
-//     display: block;
-//     max-width: 310px;
-
-//     color: $color-text-primary;
-
-//     font-size: 16px;
-//     line-height: 1.5;
-//     font-weight: $fw-medium;
-//   }
-
-//   .storeLinks {
-//     margin-top: $space-5;
-//   }
-
-//   .visual {
-//     height: auto;
-//     min-height: 360px;
-//   }
-
-//   .phoneMockup {
-//     top: 42px;
-//     width: min(218px, calc(100% - 40px));
-//   }
-
-//   .calendar    { top: 124px; right: 16px; bottom: auto; }
-//   .wallet      { top: 54px;  left: 16px; }
-//   .application { top: 196px; left: 16px; bottom: auto; }
-//   .security    { display: flex; top: 266px; right: 16px; }
-// }
-
-// /* ==========================================================================
-//    ≥ 1200px
-//    ========================================================================== */
-
-// @media (min-width: 1200px) {
-//   .mobileApp {
-//     padding-block: $space-7;
-//   }
-
-//   .wrapper {
-//     border-radius: $radius-2xl;
-//   }
-
-//   .content {
-//     padding: $space-7 $space-8;
-//   }
-
-//   .visual {
-//     min-height: 440px;
-//   }
-
-//   .phoneMockup {
-//     top: 34px;
-//     width: min(230px, calc(100% - 48px));
-//     border-radius: 42px;
-//   }
-
-//   .phoneScreen {
-//     border-radius: 34px;
-//   }
-// }
-
-// /* ========================================================================== */
-
-// @media (prefers-reduced-motion: reduce) {
-//   .storeLinks a {
-//     transition: none;
-//   }
-// }
-
-
-
-// // test
-// .floatingCard {
-//   position: absolute;
-//   z-index: 3;
-
-//   max-width: calc(50% - 20px);      // heç vaxt panelin yarısından geniş olmur
-//   padding: 8px 10px;
-
-//   display: flex;
-//   align-items: center;
-//   gap: $space-2;
-
-//   border-radius: $radius-md;
-//   border: 1px solid rgba(255, 255, 255, .24);
-//   background: rgba(255, 255, 255, .16);
-//   backdrop-filter: blur(12px);
-//   -webkit-backdrop-filter: blur(12px);
-
-//   color: $color-on-dark;
-//   font-size: $text-xs;
-//   font-weight: $fw-medium;
-//   line-height: 1.25;
-//   overflow-wrap: anywhere;          // uzun söz kəsilmir, aşağı keçir
-
-//   > :not(.floatingIcon) {
-//     min-width: 0;                   // mətnin sıxılmasına icazə verir
-//   }
-// }
-
-// .floatingIcon {
-//   flex: 0 0 auto;
-//   width: 24px;
-//   height: 24px;
-
-//   display: grid;
-//   place-items: center;
-
-//   border-radius: $radius-sm;
-//   background: rgba(255, 255, 255, .22);
-
-//   svg { width: 14px; height: 14px; }
-// }
-
-// /* Mobil: yalnız iki kart, hər biri bir oxda bir tərəfdən bağlanır */
-// .wallet      { top: 40px; left: 12px; }
-// .calendar    { top: 190px; right: 12px; }
-// .application,
-// .security    { display: none; }
-
-// @media (min-width: 640px) {
-//   .floatingCard { max-width: 160px; padding: $space-3; }
-
-//   .wallet      { top: 52px;  left: 20px; }
-//   .calendar    { top: 132px; right: 20px; }
-//   .application { display: flex; top: 220px; left: 20px; }
-// }
-
-// @media (min-width: 900px) {
-//   .wallet      { top: 54px;  left: 16px; }
-//   .calendar    { top: 124px; right: 16px; }
-//   .application { top: 196px; left: 16px; }
-//   .security    { display: flex; top: 266px; right: 16px; }
-// }
-
 @use "@/styles/abstracts/variables" as *;
-
-/* ==========================================================================
-   AZMK Mobile — mobile-first
-   Qaydalar:
-   1. Baza stillər mobil üçündür, böyük ekranlar yalnız `min-width` ilə gəlir.
-   2. Absolute elementlər bir oxda yalnız bir tərəfdən bağlanır
-      (top VƏ bottom birlikdə yazılmır — element dartılır).
-   3. Tərəf dəyişəndə əvvəlki tərəf `auto` ilə sıfırlanır.
-   Sinif adları köhnə fayldakı ilə eynidir — JSX-də dəyişiklik lazım deyil.
-   ========================================================================== */
 
 .mobileApp {
   padding-block: $space-6;
-  font-family: var(--font-ibm-plex-sans), var(--font-geist-sans), Arial, sans-serif;
+  font-family:
+    var(--font-ibm-plex-sans), var(--font-geist-sans), Arial, sans-serif;
 }
 
 .wrapper {
@@ -548,7 +36,7 @@
     font-size: clamp(30px, 7.5vw, 52px);
     line-height: 1.1;
     font-weight: $fw-bold;
-    letter-spacing: -.03em;
+    letter-spacing: -0.03em;
     text-wrap: balance;
   }
 }
@@ -559,7 +47,7 @@
   font-size: 13px;
   line-height: 1.2;
   font-weight: $fw-semibold;
-  letter-spacing: .12em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -607,7 +95,7 @@
     border: 1px solid $color-accent;
     border-radius: $radius-md;
 
-    background: $color-accent;
+    background: $color-gradient-m;
     color: $color-on-dark;
 
     transition:
@@ -669,11 +157,7 @@
   overflow: hidden;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(8, 26, 51, .35),
-      rgba(8, 26, 51, .15)
-    ),
+    linear-gradient(135deg, rgba(8, 26, 51, 0.35), rgba(8, 26, 51, 0.15)),
     linear-gradient(
       135deg,
       var(--brand-gradient-start) 0%,
@@ -692,11 +176,11 @@
   width: 172px;
   padding: 7px;
 
-  border: 1px solid rgba(255, 255, 255, .18);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 30px;
 
   background: $color-dark-surface;
-  box-shadow: 0 16px 34px rgba(8, 26, 51, .12);
+  box-shadow: 0 16px 34px rgba(8, 26, 51, 0.12);
 
   transform: none;
 
@@ -736,8 +220,8 @@
   gap: $space-2;
 
   border-radius: $radius-md;
-  border: 1px solid rgba(255, 255, 255, .28);
-  background: rgba(255, 255, 255, .16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
@@ -761,7 +245,7 @@
   place-items: center;
 
   border-radius: $radius-sm;
-  background: rgba(255, 255, 255, .22);
+  background: rgba(255, 255, 255, 0.22);
 
   svg {
     width: 14px;
@@ -769,9 +253,15 @@
   }
 }
 
-.wallet   { top: 44px; }
-.calendar { top: 104px; }
-.security { top: 164px; }
+.wallet {
+  top: 44px;
+}
+.calendar {
+  top: 104px;
+}
+.security {
+  top: 164px;
+}
 
 .application {
   display: none;
@@ -806,8 +296,12 @@
   }
 
   .storeText {
-    small  { font-size: 10px; }
-    strong { font-size: 14px; }
+    small {
+      font-size: 10px;
+    }
+    strong {
+      font-size: 14px;
+    }
   }
 
   .visual {
@@ -916,10 +410,22 @@
     width: min(218px, calc(100% - 40px));
   }
 
-  .wallet      { top: 54px;  left: 16px; }
-  .calendar    { top: 124px; right: 16px; }
-  .application { top: 196px; left: 16px; }
-  .security    { top: 266px; right: 16px; }
+  .wallet {
+    top: 54px;
+    left: 16px;
+  }
+  .calendar {
+    top: 124px;
+    right: 16px;
+  }
+  .application {
+    top: 196px;
+    left: 16px;
+  }
+  .security {
+    top: 266px;
+    right: 16px;
+  }
 }
 
 /* ==========================================================================

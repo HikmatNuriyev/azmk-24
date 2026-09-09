@@ -14,7 +14,7 @@ export default function ProductsPage() {
     <section className={style.products}>
       <Container>
         <div className={style.hero}>
-          <span className={style.badge}>Məhsullarımız</span>
+       
 
           <Title as="h1" size="hero">
             Kredit və Lizinq Məhsulları

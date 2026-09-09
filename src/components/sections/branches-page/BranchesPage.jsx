@@ -13,7 +13,7 @@ export default function BranchesPage() {
     <section className={style.branches}>
       <Container>
         <div className={style.hero}>
-          <span className={style.badge}>Filiallar</span>
+          
 
           <Title as="h1" size="hero">
             Sizə yaxın filiallarımız

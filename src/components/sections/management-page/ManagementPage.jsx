@@ -1,76 +1,59 @@
-import Image from "next/image";
+"use client";
 
-import style from "./managementPage.module.scss";
+import { useState } from "react";
+import Image from "next/image";
 
 import Container from "@/components/ui/container";
 import Title from "@/components/ui/title";
-import Card from "@/components/ui/card";
 
+import MemberDialog from "./MemberDialog";
 import { managementData } from "./managementData";
 
+import style from "./managementPage.module.scss";
+
 export default function ManagementPage() {
+  const [activeId, setActiveId] = useState(null);
+
+  const active =
+    managementData.find((person) => person.id === activeId) ?? null;
+
   return (
     <section className={style.management}>
       <Container>
-
         <div className={style.hero}>
-
-          <span className={style.badge}>
-            Rəhbərlik
-          </span>
-
           <Title as="h1" size="hero">
             İdarə Heyəti
           </Title>
-
-          <p>
-            Azərbaycan Mikro Kredit rəhbərliyi və
-            idarəetmə komandası ilə tanış olun.
-          </p>
-
         </div>
 
-        <div className={style.grid}>
-
+        <ul className={style.grid}>
           {managementData.map((person) => (
-            <Card
-              key={person.id}
-              padding="none"
-            >
-
-              <div className={style.member}>
-
-                <div className={style.imageWrapper}>
-
+            <li key={person.id}>
+              <button
+                type="button"
+                className={style.card}
+                onClick={() => setActiveId(person.id)}
+                aria-haspopup="dialog"
+              >
+                <span className={style.photo}>
                   <Image
                     src={person.image}
-                    alt={person.name}
-                    width={500}
-                    height={500}
+                    alt=""
+                    width={640}
+                    height={480}
+                    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw"
                   />
+                </span>
 
-                </div>
-
-                <div className={style.content}>
-
-                  <h2>
-                    {person.name}
-                  </h2>
-
-                  <span>
-                    {person.position}
-                  </span>
-
-                </div>
-
-              </div>
-
-            </Card>
+                <span className={style.name}>{person.name}</span>
+                <span className={style.position}>{person.position}</span>
+              </button>
+            </li>
           ))}
-
-        </div>
-
+        </ul>
       </Container>
+
+      <MemberDialog person={active} onClose={() => setActiveId(null)} />
     </section>
   );
 }
