@@ -73,7 +73,7 @@ export default function AboutPage() {
           ))}
         </dl>
 
-        <nav className={style.links} aria-label="Əlaqəli səhifələr">
+        {/* <nav className={style.links} aria-label="Əlaqəli səhifələr">
           <ul>
             {links.map((link) => (
               <li key={link.href}>
@@ -87,7 +87,7 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
-        </nav>
+        </nav> */}
       </Container>
     </section>
   );

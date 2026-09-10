@@ -19,7 +19,7 @@ export const heroSlideConfig = [
     eyebrow: "Xüsusi kampaniya",
     title: "Yeni kampaniya məlumatı",
     description:
-      "Təsdiqlənmiş kampaniya məzmunu və şərtləri burada təqdim ediləcək.",
+      "kampaniya məzmunu və şərtləri.",
     href: HERO_ROUTES.campaign,
     ctaLabel: "Kampaniya ilə tanış ol",
     image: "/images/Logonext.webp",
@@ -61,7 +61,7 @@ export const heroSlideConfig = [
     description: productDescriptions["İstehlak Krediti"],
     href: HERO_ROUTES.products,
     ctaLabel: "Şərtlərə bax",
-    image: "/images/istehlak.svg",
+    image: "/images/istehlak.webp",
     imageAlt: "İstehlak Krediti məhsulu üçün illüstrasiya",
     productReference: "İstehlak Krediti",
   },
