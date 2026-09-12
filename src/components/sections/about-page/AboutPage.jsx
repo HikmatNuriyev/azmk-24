@@ -39,28 +39,27 @@ export default function AboutPage() {
           </Title>
 
           <p className={style.lead}>
-            Azərbaycan Mikro-Kredit BOKT fərdi şəxslər və sahibkarlar üçün
-            çevik və əlçatan maliyyə xidmətləri təqdim edir.
+            Azərbaycan Mikro-Kredit BOKT fərdi şəxslər və sahibkarlar üçün çevik
+            və əlçatan maliyyə xidmətləri təqdim edir.
           </p>
         </div>
 
         <div className={style.prose}>
           <p>
-            &laquo;Azərbaycan Mikro-Kredit Bank Olmayan Kredit
-            Təşkilatı&raquo; 2014-cü ilin aprel ayında Azərbaycan
-            Respublikasının qanunvericiliyinə uyğun olaraq təsis
-            edilmişdir.
+            &laquo;Azərbaycan Mikro-Kredit Bank Olmayan Kredit Təşkilatı&raquo;
+            2014-cü ilin aprel ayında Azərbaycan Respublikasının
+            qanunvericiliyinə uyğun olaraq təsis edilmişdir.
           </p>
 
           <p>
-            Təşkilatın əsas məqsədi fiziki və hüquqi şəxslərə,
-            sahibkarlara və az təminatlı icmalara qısa və uzun müddətli
-            kredit xidmətləri təqdim etməkdir.
+            Təşkilatın əsas məqsədi fiziki və hüquqi şəxslərə, sahibkarlara və
+            az təminatlı icmalara qısa və uzun müddətli kredit xidmətləri təqdim
+            etməkdir.
           </p>
 
           <p>
-            Şirkət Azərbaycan Respublikası Mərkəzi Bankı tərəfindən
-            verilmiş lisenziya əsasında fəaliyyət göstərir.
+            Şirkət Azərbaycan Respublikası Mərkəzi Bankı tərəfindən verilmiş
+            lisenziya əsasında fəaliyyət göstərir.
           </p>
         </div>
 
@@ -72,22 +71,6 @@ export default function AboutPage() {
             </div>
           ))}
         </dl>
-
-        {/* <nav className={style.links} aria-label="Əlaqəli səhifələr">
-          <ul>
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className={style.link}>
-                  <span className={style.linkTitle}>{link.title}</span>
-                  <span className={style.linkText}>{link.text}</span>
-                  <span className={style.linkArrow} aria-hidden="true">
-                    →
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav> */}
       </Container>
     </section>
   );

@@ -137,7 +137,7 @@ export default async function Campaigns() {
       <Container>
         <div className={style.heading}>
           <h2 id="campaigns-title">Kampaniyalar</h2>
-          <p>Aktual təkliflərimizlə tanış olun.</p>
+        
         </div>
 
         <ul className={style.grid}>
@@ -157,9 +157,7 @@ export default async function Campaigns() {
                 <span className={style.body}>
                   <span className={style.title}>{item.title}</span>
                   <span className={style.caption}>{item.caption}</span>
-                  <span className={style.more} aria-hidden="true">
-                    Ətraflı →
-                  </span>
+                  
                 </span>
               </div>
             </li>

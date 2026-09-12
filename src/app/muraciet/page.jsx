@@ -1,10 +1,8 @@
-import ApplicationPage from "@/components/sections/application-page";
 import ContactPage from "@/components/sections/contact-page/ContactPage";
 export const metadata = {
   title: "Onlayn Müraciət",
-  description:
-    "Azərbaycan Mikro Kredit onlayn müraciət formu.",
-   alternates: { canonical: "/muraciet" },
+  description: "Azərbaycan Mikro Kredit onlayn müraciət formu.",
+  alternates: { canonical: "/muraciet" },
 };
 
 export default function Application() {

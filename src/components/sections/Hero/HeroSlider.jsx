@@ -247,8 +247,8 @@ export default function HeroSlider({ slides }) {
                     src={slide.image}
                     alt={slide.imageAlt}
                    
-                    layout="fill"
-                    quality={100}
+                  fill
+                    
                     priority={index === 0}
                     sizes="(max-width: 480px) 100vw, (max-width: 1024px) 100vw, 45vw"
                     style={{ objectFit: "cover" }}

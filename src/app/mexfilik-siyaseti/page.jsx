@@ -104,8 +104,7 @@ export default function PrivacyPolicyPage() {
         </p>
       </InformationSection>
 
-      {/* LEGAL REVIEW: Confirm processing purposes, legal bases, recipients,
-          retention periods, user rights, and complaint procedures before production. */}
+      
     </InformationPage>
   );
 }
