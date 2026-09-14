@@ -21,9 +21,9 @@ export default function ManagementPage() {
     <section className={style.management}>
       <Container>
         <div className={style.hero}>
-          <Title as="h1" size="hero">
+          {/* <Title as="h1" size="hero">
             İdarə Heyəti
-          </Title>
+          </Title> */}
         </div>
 
         <ul className={style.grid}>
