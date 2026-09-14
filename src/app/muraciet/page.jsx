@@ -1,7 +1,9 @@
 import ContactPage from "@/components/sections/contact-page/ContactPage";
+
 export const metadata = {
-  title: "Onlayn Müraciət",
-  description: "Azərbaycan Mikro Kredit onlayn müraciət formu.",
+  title: "Əlaqə | Azərbaycan Mikro Kredit",
+  description:
+    "Azərbaycan Mikro Kredit ilə əlaqə vasitələri və baş ofis məlumatları.",
   alternates: { canonical: "/muraciet" },
 };
 

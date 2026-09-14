@@ -18,10 +18,10 @@ const contactDetails = Object.freeze({
     href: "tel:*6300",
   },
   phone: {
-    display: "+994 51 230 86 64",
-    href: "tel:+994512308664",
+    display: "+994 10 243 80 82",
+    href: "tel:+994102438082",
   },
-  whatsapp: "https://wa.me/994102606300",
+  whatsapp: "https://wa.me/994102438082",
   email: {
     display: "info@azmk.az",
     href: "mailto:info@azmk.az",
@@ -41,20 +41,11 @@ export default function ContactPage() {
     <div className={style.page}>
       <Container>
         <div className={style.inner}>
-          {/* <header className={style.introduction}>
-            <p className={style.eyebrow}>Azərbaycan Mikro-Kredit BOKT</p>
-            <h1>Əlaqə</h1>
-            <p className={style.lead}>
-              AZMK ilə əlaqə saxlamaq üçün sizə uyğun əlaqə vasitəsini seçin.
-            </p>
-          </header> */}
-
           <section
             className={style.contactMethods}
             aria-labelledby="contact-methods-title"
           >
             <div className={style.sectionHeading}>
-              <p className={style.eyebrow}>Birbaşa əlaqə</p>
               <h2 id="contact-methods-title">Əlaqə vasitələri</h2>
             </div>
 
@@ -90,7 +81,7 @@ export default function ContactPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${style.action} ${style.secondaryAction}`}
-                    aria-label="+994 10 260 63 00 nömrəsinə WhatsApp-da yaz; yeni pəncərədə açılır"
+                    aria-label="+994 10 243 80 82 nömrəsinə WhatsApp-da yaz; yeni pəncərədə açılır"
                   >
                     <MessageCircle aria-hidden="true" />
                     WhatsApp-da yaz
@@ -189,20 +180,20 @@ export default function ContactPage() {
             </div>
 
             <div className={style.mapWrapper}>
-             <iframe
-              src="https://www.google.com/maps?q=40.371599,49.8356626&z=18&output=embed"
-              title="Azərbaycan Mikro-Kredit BOKT — Bakı baş ofisi"
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+              <iframe
+                src="https://www.google.com/maps?q=40.371599,49.8356626&z=18&output=embed"
+                title="Azərbaycan Mikro-Kredit BOKT — Bakı baş ofisi"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
               <a
-              href="https://www.google.com/maps/place/Azerbaycan+Mikro+Kredit/@40.3715794,49.8349953,18z/data=!4m6!3m5!1s0x40307dc846040033:0x50b5ce0661e1b420!8m2!3d40.371599!4d49.8356626!16s%2Fg%2F11b5z0zt3s?hl=tr&entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={style.mapAction}
-              aria-label="Azərbaycan Mikro-Kredit BOKT Bakı baş ofisini Google Xəritədə aç; yeni pəncərədə açılır"
-            >
+                href="https://www.google.com/maps/place/Azerbaycan+Mikro+Kredit/@40.3715794,49.8349953,18z/data=!4m6!3m5!1s0x40307dc846040033:0x50b5ce0661e1b420!8m2!3d40.371599!4d49.8356626!16s%2Fg%2F11b5z0zt3s?hl=tr&entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={style.mapAction}
+                aria-label="Azərbaycan Mikro-Kredit BOKT Bakı baş ofisini Google Xəritədə aç; yeni pəncərədə açılır"
+              >
                 Google Xəritədə aç
                 <ExternalLink aria-hidden="true" />
               </a>
@@ -230,14 +221,6 @@ export default function ContactPage() {
                 Məhsullara bax
                 <ArrowRight aria-hidden="true" />
               </Link>
-
-              {/* <Link
-                href="/muraciet"
-                className={`${style.action} ${style.primaryAction}`}
-              >
-                Onlayn müraciət
-                <ArrowRight aria-hidden="true" />
-              </Link> */}
             </div>
           </section>
         </div>

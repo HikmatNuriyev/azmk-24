@@ -26,6 +26,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  trailingSlash: true, 
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -34,15 +35,6 @@ const nextConfig = {
         hostname: 'api.azmk.az',
       },
     ],
-  },
-  async redirects() {
-    return [
-      {
-        source: '/index.php',
-        destination: '/',
-        permanent: true,
-      },
-    ];
   },
 };
 
