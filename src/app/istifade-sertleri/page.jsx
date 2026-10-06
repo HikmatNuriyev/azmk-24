@@ -109,8 +109,7 @@ export default function TermsOfUsePage() {
         </p>
       </InformationSection>
 
-      {/* LEGAL REVIEW: Confirm intellectual-property, liability, jurisdiction,
-          amendment, and contractual wording before production. */}
+   
     </InformationPage>
   );
 }
