@@ -1,10 +1,5 @@
-
-
-
-
-
 import Image from "next/image";
-
+import Link from "next/link";
 
 import Container from "@/components/ui/container";
 
@@ -20,13 +15,12 @@ export default async function Campaigns() {
       <Container>
         <div className={style.heading}>
           <h2 id="campaigns-title">Kampaniyalar</h2>
-        
         </div>
 
         <ul className={style.grid}>
-          {items.map((item) => (
-            <li key={item.id}>
-              <div href={item.href} className={style.card}>
+          {items.map((item) => {
+            const content = (
+              <>
                 <span className={style.visual}>
                   <Image
                     src={item.image}
@@ -39,12 +33,23 @@ export default async function Campaigns() {
 
                 <span className={style.body}>
                   <span className={style.title}>{item.title}</span>
-                  <span className={style.caption}>{item.caption}</span>
-                  
+                  {item.caption && <span className={style.caption}>{item.caption}</span>}
                 </span>
-              </div>
-            </li>
-          ))}
+              </>
+            );
+
+            return (
+              <li key={item.id}>
+                {item.href ? (
+                  <Link href={item.href} className={style.card}>
+                    {content}
+                  </Link>
+                ) : (
+                  <div className={style.card}>{content}</div>
+                )}
+              </li>
+            );
+          })}
         </ul>
       </Container>
     </section>
